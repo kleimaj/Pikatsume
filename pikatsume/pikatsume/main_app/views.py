@@ -36,7 +36,7 @@ def pikabase_index(request):
 
 @login_required
 def profile(request):
-    return render(request, 'accounts/profile')
+    return render(request, 'accounts/profile.html')
 
 @login_required
 def new_pika(request):
