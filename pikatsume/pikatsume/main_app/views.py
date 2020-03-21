@@ -25,10 +25,10 @@ def signup(request):
     return render(request, 'registration/signup.html', context)
 
 def home(request):
-    return render(request, 'home')
+    return render(request, 'home.html')
 
 def about(request):
-    return  render(request, 'about')
+    return  render(request, 'about.html')
 
 def pikabase_index(request):
     pikas = Pika.objects.all()
