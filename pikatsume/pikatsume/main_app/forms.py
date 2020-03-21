@@ -6,7 +6,4 @@ class PikaForm(forms.ModelForm):
         model = Pika
         fields = ('name', 'pic')
 
-from django.contrib.auth.models import User
 
-class Profile(forms.ModelForm):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
