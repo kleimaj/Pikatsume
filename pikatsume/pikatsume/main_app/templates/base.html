@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>(o^.^o)Pikatsume!</title>
     <!-- CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Mouse+Memoirs|Inter:200,300,400,500,600,700,800,900&display=swap"" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Exo|Inter:200,300,400,500,600,700,800,900&display=swap"" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bulma.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -17,13 +17,9 @@
           <nav>
             <div class="nav-wrapper">
               <ul>
-                <li><a href="/" class="left brand-logo bold">Pikatsume!</a></li>
-              </ul>
-              <ul class="right">
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'index' %}">View the Pikabase</a></li>
+                {% comment %} <li><a href="{% url 'catch' %}">Catch A Pikachu!</a></li> {% endcomment %}
                 {% if user.is_authenticated %}
-                  <li><a href="{% url 'new_pika' %}">Add a Pikachu</a></li>
+                  <li><a href="{% url 'profile' %}">My Profile</a></li>
                   <li><a href="{% url 'logout' %}">Log Out</a></li>
                 {% else %}
                   <li><a href="{% url 'signup' %}">Sign Up</a></li>
@@ -33,9 +29,11 @@
             </div>
           </nav>
       </header>
-      <main class="container">
+      <main>
+        <section class="section">
           {% block content %}
           {% endblock %}
+        </section>
       </main>
       <footer>&copy; 2020 Pika Pika</footer>
   </body>
