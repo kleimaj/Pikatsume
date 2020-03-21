@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from django.dispatch import receiver
-from .models import Pika, Ptype, Profile
+from .models import Pika, Profile
 from .forms import PikaForm
 # Create your views here.
 
