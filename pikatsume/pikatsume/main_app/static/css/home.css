@@ -1,0 +1,38 @@
+* {
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    padding: 40px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    align-content: flex-start;
+}
+
+.home-btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    flex-flow: row;
+    align-items: flex-start;
+    background: gold;
+    margin: 5px 0;
+    border: 3px solid #333;
+    box-shadow: 3px 3px #777;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.home-btn:hover {
+    border: 3px solid goldenrod;
+    background: transparent;
+    color: goldenrod;
+}
+
+.smol-text {
+    font-size: 0.7em;
+    margin-top: 15px;
+}

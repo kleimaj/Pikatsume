@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="form-section">
+        <h1>Add a Pikachu</h1>
+        <form  method="POST" class="artist-form">
+            {% csrf_token %}
+            {{new_form.as_p}}
+            {{type_form.as_p}}
+            <button class="btn" type="submit">Save</button>
+        </form>
+    </section>
+{% endblock %}

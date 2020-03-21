@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(o^.^o)Pikatsume!</title>
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Mouse+Memoirs|Inter:200,300,400,500,600,700,800,900&display=swap"" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <!-- JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+           
+            <div class="content">
+                 <img class="is-pulled-left" src="https://i.ibb.co/vdtqnDx/solo-upsetti-chu-bg.png" alt="A Pikachu" />
+                <h1 class="title is-1">Pikatsume!</h1>
+                <h3 class="subtitle is-3">A Collection of Pikachus</h3>
+            <section class="section">
+                <a href="{% url 'index' %}" class="home-btn button"><i class="fas fa-bolt"></i>&nbsp; View the Pikabase</a>
+                <a href="{% url 'signup' %}" class="home-btn button"><i class="fas fa-bolt"></i>&nbsp; Sign Up</a>
+                <a href="{% url 'login' %}" class="home-btn button"><i class="fas fa-bolt"></i>&nbsp; Log In</a>
+                <br />
+                <span class="smol-text is-pulled-right">
+                    Pikachu by <a href="https://twitter.com/rizuNM/media" class="bold" target="_blank">rizuNM</a>
+                </span>
+            </section>
+
+        </div>
+    </section>
+</body>
+</html>
