@@ -38,10 +38,13 @@ class Origin(models.Model):
         return self.get_origin_display()
 
 class Profile(models.Model):
+    name = models.CharField(max_length=255)
+    puffins = models.CharField(max_length=500)
+    pikachu = models.ManyToManyField(Ptype)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-
-    # def __str__(self):
-    #     return self.user
+    
+    def __str__(self):
+        return self.user
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
