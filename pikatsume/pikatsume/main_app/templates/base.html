@@ -14,7 +14,10 @@
 </head>
   <body>
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation>
-        <div class"navbar-start">
+        <div class="navbar-start">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="{% url 'home'  %}"><i class="fas fa-3x fa-bolt"></i></a>
+          </div>
           <a class="navbar-item" href="{% url 'catch' %}">Catch A Pikachu!</a>
           <a class="navbar-item" href="{% url 'index' %}">View the Pikabase</a>
           {% if user.is_authenticated %}
@@ -24,8 +27,10 @@
               <a class="navbar-item" href="{% url 'logout' %}">Log Out</a>
             </span>
           {% else %}
-            <a class="navbar-item" href="{% url 'signup' %}">Sign Up</a>
-            <a class="navbar-item" href="{% url 'login' %}">Log In</a>
+            <span class="navbar-end">
+              <a class="navbar-item" href="{% url 'signup' %}">Sign Up</a>
+              <a class="navbar-item" href="{% url 'login' %}">Log In</a>
+            </span>
           {% endif %}
         </div>
     </nav>
