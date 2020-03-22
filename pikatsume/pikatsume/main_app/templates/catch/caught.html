@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Congratulations!</h2>
+    <h3>You caught...</h3>
+    <h2>{{pika.name}}</h2>
+    <img src="{{pika.pic}}" alt="pikachu"></img>
+
+    <a href="{% url 'catch_confirm' %}"><button>Catch Another!</button></a>
+    <a href="#"><button>Buy More Poffins</button></a>
+    <a href="#"><button>View Collection</button></a>
+{% endblock %}
