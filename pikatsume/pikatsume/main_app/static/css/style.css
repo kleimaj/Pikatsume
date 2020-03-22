@@ -45,8 +45,9 @@ footer {
   color: #333;
   border-radius: 15px;
 }
-
-
+.mobile-label {
+  display: none;
+}
 /* ===  TILES === */
 .tile {
   flex-flow: row wrap;
@@ -121,8 +122,7 @@ label {
 /* === MEDIA QUERIES === */
 /* ===================== */
 @media only screen and (max-width: 600px) {
-  .navbar-item{
+  .mobile-label {
     display: inline;
   }
-
 }
