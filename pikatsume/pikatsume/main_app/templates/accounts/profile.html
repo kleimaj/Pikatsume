@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Profile</h1>
-    <h4>Hello, {{ user.username }}!</h4>
+    <h1 class="title is-1">Hello,  {{ user.username }}! </h1>
     {% comment %} <form method="post">
         {% csrf_token %}
         {{ profile_form.as_p }}

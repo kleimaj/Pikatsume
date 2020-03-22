@@ -6,40 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>(o^.^o)Pikatsume!</title>
     <!-- CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Exo|Inter:200,300,400,500,600,700,800,900&display=swap"" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo|Inter:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/bulma.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
   <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation>
-        <div class"navbar-start">
-          {% comment %} <a class="navbar-item" href="{% url 'catch' %}">Catch A Pikachu!</a> {% endcomment %}
-          {% if user.is_authenticated %}
-          <div class="navbar-item has-dropdown is-active">
-              <a class="navbar-link is-arrowless">
-                <span class="icon is-large">
-                  <i class="fas fa-3x fa-cog"></i>
-                </span>
-              </a>
-          
-              <div class="navbar-dropdown">
-                <a class="navbar-item" href="{% url 'profile' %}">My Profile</a>
-                <a class="navbar-item" href="{% url 'logout' %}">Log Out</a>
-              </div>
-
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation>
+        <div class="navbar-start">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="{% url 'home'  %}"><i class="fas fa-3x fa-bolt"></i></a>
           </div>
+          <a class="navbar-item" href="{% url 'catch' %}">Catch A Pikachu!</a>
+          <a class="navbar-item" href="{% url 'index' %}">View the Pikabase</a>
+          {% if user.is_authenticated %}
+            <a class="navbar-item" href="{% url 'profile' %}">My Profile</a>
+            <span class="navbar-end">
+              <a class="navbar-item" href="{% url 'catch' %}">10 &nbsp;&nbsp;<i class="fas fa-2x fa-cookie"></i></a>
+              <a class="navbar-item" href="{% url 'logout' %}">Log Out</a>
+            </span>
           {% else %}
-            <a class="navbar-item" href="{% url 'signup' %}">Sign Up</a>
-            <a class="navbar-item" href="{% url 'login' %}">Log In</a>
+            <span class="navbar-end">
+              <a class="navbar-item" href="{% url 'signup' %}">Sign Up</a>
+              <a class="navbar-item" href="{% url 'login' %}">Log In</a>
+            </span>
           {% endif %}
         </div>
     </nav>
     <main>
       <section class="section">
-        {% block content %}
-        {% endblock %}
+        <div class="container">
+          {% block content %}
+          {% endblock %}
+        </div>
       </section>
     </main>
     <footer>&copy; 2020 Pika Pika</footer>

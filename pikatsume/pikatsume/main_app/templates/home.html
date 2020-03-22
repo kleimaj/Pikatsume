@@ -16,20 +16,25 @@
 <body>
     <section class="section">
         <div class="container">
-           
             <div class="content">
                 <img class="is-pulled-left" src="https://i.ibb.co/vdtqnDx/solo-upsetti-chu-bg.png" alt="A Pikachu" />
                 <h1 class="title is-1">Pikatsume!</h1>
-                <h3 class="subtitle is-3">A Collection of Pikachus</h3>
-            <section class="section">
-                <a href="{% url 'index' %}" class="home-btn button"><i class="fas fa-bolt"></i>&nbsp; View the Pikabase</a>
-                <a href="{% url 'signup' %}" class="home-btn button"><i class="fas fa-bolt"></i>&nbsp; Sign Up</a>
-                <a href="{% url 'login' %}" class="home-btn button"><i class="fas fa-bolt"></i>&nbsp; Log In</a>
-                <br />
-                <span class="smol-text is-pulled-right">
-                    Pikachu by <a href="https://twitter.com/rizuNM/media" class="bold" target="_blank">rizuNM</a>
-                </span>
-            </section>
+                <p class="subtitle is-3">Pikachu Collector</p>
+                <section class="section">
+                      <a href="{% url 'catch' %}" class="home-btn button"><i class="fas fa-bolt"></i>&nbsp; Catch a Pikachu!</a>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'profile' %}" class="home-btn button">View Profile</a>
+                        <a href="{% url 'logout' %}" class="home-btn button">Log Out</a>
+                    {% else %}
+                        <a href="{% url 'signup' %}" class="home-btn button">Sign Up</a>
+                        <a href="{% url 'login' %}" class="home-btn button">Log In</a>
+                    {% endif %}
+                    <br />
+                    <span class="smol-text is-pulled-right">
+                        Pikachu by <a href="https://twitter.com/rizuNM/media" class="bold" target="_blank">rizuNM</a>
+                    </span>
+                </section>
+            </div>
 
         </div>
     </section>

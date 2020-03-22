@@ -15,13 +15,16 @@
 }
 
 .home-btn {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Exo', sans-serif;
     font-weight: 600;
+    font-size: 1.5em;
+    text-transform: uppercase;
     flex-flow: row;
     align-items: flex-start;
-    background: gold;
+    color: #333;
     margin: 5px 0;
     border: 3px solid #333;
+    border-radius: 10px;
     box-shadow: 3px 3px #777;
     background: rgba(255, 255, 255, 0.8);
 }
