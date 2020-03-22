@@ -16,19 +16,10 @@
     <nav class="navbar" role="navigation" aria-label="main navigation>
         <div class"navbar-start">
           <a class="navbar-item" href="{% url 'catch' %}">Catch A Pikachu!</a>
-          <a class="navbar-item" href="{% url 'index' %}">View the Pikabase!</a>
+          <a class="navbar-item" href="{% url 'index' %}">View the Pikabase</a>
           {% if user.is_authenticated %}
-          <div class="navbar-item has-dropdown is-active">
-              <a class="navbar-link is-arrowless">
-                <span class="icon is-large">
-                  <i class="fas fa-2x fa-cog"></i>
-                </span>
-              </a>
-              <div class="navbar-dropdown">
-                <a class="navbar-item" href="{% url 'profile' %}">My Profile</a>
-                <a class="navbar-item" href="{% url 'logout' %}">Log Out</a>
-              </div>
-          </div>
+            <a class="navbar-item" href="{% url 'profile' %}">My Profile</a>
+            <a class="navbar-end navbar-item" href="{% url 'logout' %}">Log Out</a>
           {% else %}
             <a class="navbar-item" href="{% url 'signup' %}">Sign Up</a>
             <a class="navbar-item" href="{% url 'login' %}">Log In</a>
