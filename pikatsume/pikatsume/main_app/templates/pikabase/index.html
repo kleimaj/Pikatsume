@@ -1,34 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h2>The Pikabase!</h2>
-  <div class="row">
+<div class="container">
+  <h2 class="title is-2">The Pikabase!</h2>
+  <div class="tile is-ancestor">
+    <div class="tile is-parent">
     {% for pika in pikas %}
-    <div class="col s5 m5 l5">
-
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-        <img class="responsive-img" src="{{ pika.pic }}" alt="A Pikachu">
+      <div class="tile is-child box">
+          <h4 class="title is-4"><i class="fas fa-bolt"></i>&nbsp;&nbsp;{{ pika.name }}</h4>
+          <img src="{{ pika.pic_url }}" alt="A Pikachu">
       </div>
-      <div class="card-content">
-        <h4>{{ pika.name }}</h4>
-        {% for origin in pika.origin_set.all %}
-          <p><span class="bold">Origin:</span> {{ origin.get_origin_display }}</p> 
-        {% endfor %}
-        {% comment %} <p><span class="bold">Type:</span>
-          <ul class="pika-list">
-            {% for pika in pika.pika_type.all %}      
-              <li>
-                <span>
-                  <i class="fas fa-bolt"></i>
-                </span> {{ pika.pika_type }}
-              </li>
-            {% endfor %} {% endcomment %}
-          </ul>
-        </p>
-      </div>
+    {% endfor %}
     </div>
   </div>
-  {% endfor %}
-  </div>
-  <!-- Add Pika Form -->
+</div>
 {% endblock %}

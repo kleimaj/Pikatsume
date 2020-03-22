@@ -1,4 +1,7 @@
-/* GLOBAL */
+
+/* ================ */
+/* ==== GLOBAL ==== */
+/* ================ */
 body {
   display: flex;
   min-height: 100vh;
@@ -11,8 +14,7 @@ main {
 }
 h1,h2,h3,h4,h5 {
   font-weight: 900;
-  font-family: 'Mouse Memoirs', sans-serif;
-  letter-spacing: 3px;
+  font-family: 'Exo', sans-serif;
 }
 a:link, a:visited {
   color: #333;
@@ -24,63 +26,20 @@ footer {
   padding-top: 0;
   text-align: right;
 }
-nav {
-  background-color: #fdd835;
-}
-/* Materialize Overrides */
-nav .brand-logo {
-  margin-left: 2em;
-}
-nav .right {
-  margin-right: 2em;
-}
-.container {
-  width: 95%;
-  font-size: 1.3em;
-}
-.card {
-  width: 500px;
-  border: 7px solid gold;
-  border-radius: 10px;
-  position: relative;
-  transition: transform 1s;
-  transform-style: preserve-3d;
-}
-.card img {
-  padding: 10px;
-}
-.bold {
+
+/* =============== */
+/* BULMA OVERRIDES */
+/* =============== */
+/* .has-dropdown {
+  margin-left: 2rem;
+} */
+.navbar a:link, a:visited {
+  color: goldenrod;
   font-weight: 900;
 }
-ul.pika-list {
-  margin-top: 0;
+.navbar a:hover {
+  color: #333;
 }
-.pika-list li {
-  margin-left: 20px;
-}
-.pika-list span {
-  color: goldenrod;
-}
-
-/* Card Flip */
-.scene {
-  width: 200px;
-  height: 260px;
-  perspective: 600px;
-}
-.card__face {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  backface-visibility: hidden;
-}
-.card__face--front {
-  background: red;
-}
-.card__face--back {
-  background: blue;
-  transform: rotateY( 180deg );
-}
-.card.is-flipped {
-  transform: rotateY(180deg);
+.box {
+  margin: 50px;
 }
