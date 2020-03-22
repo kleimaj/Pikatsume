@@ -10,4 +10,4 @@ class PikaForm(forms.ModelForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('name', 'puffins', 'pikachu')
+        fields = ('name', 'poffins', 'pikas')

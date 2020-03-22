@@ -36,6 +36,10 @@ def pikabase_index(request):
 
 @login_required
 def profile(request):
+    # profile = Profile(name=request.user, poffins=30)
+    # print(profile)
+    # profile.save()
+    # print("profile saved~~~~~~~")
     return render(request, 'accounts/profile.html')
 
 @login_required
