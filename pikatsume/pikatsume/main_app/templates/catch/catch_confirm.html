@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpokemonmmo.fandom.com%2Fwiki%2FGetting_your_first_5_PokeBalls.&psig=AOvVaw00LBH8VCuU5LgrLsCJBlfF&ust=1584916413215000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLCIzPfPrOgCFQAAAAAdAAAAABAD" alt="pokeball"></img>
+    {% if profile.poffins.count >= 5 %}
+        <h2>Are you sure?</h2>
+        <h3>You currently have {{profile.poffins.count}} Poffins!</h3>
+        <a href="{% url 'caught' %}"><button>Catch a Pikachu (5 Poffins)</button></a>
+    {% else %}
+        <h2>You don't have enough Poffins!!</h2>
+    
+    {% endif %}
+        <a href="#"><button>Buy More Poffins</button></a>
+
+{% endblock %}

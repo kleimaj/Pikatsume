@@ -63,3 +63,25 @@ def update_profile(request):
     else:
         profile_form = ProfileForm(instance=request.user.profile)
         return render(request, 'profile.html', {'profile_form': profile_form})
+
+# Catch (Game Logic Controllers)
+@login_required
+def catch(request):
+    return render(request, 'catch/catch.html')
+@login_required
+def catch_confirm(request):
+    # user = request.user
+    # print(user)
+    # profile = user.profile
+    profile = Profile.objects.get(user=request.user)
+    return render(request, 'catch/catch_confirm.html', {'profile':profile})
+@login_required
+def caught(request, profile_id):
+    # get this user's profile
+    profile = Profile.objects.get(id=profile_id)
+    new_pika = Pika.objects.order_by("?").first()
+    profile.pikas.add(new_pika)
+    return render(request, 'catch/caught.html', {
+        'pika':new_pika,
+        'profile':profile,
+        })
