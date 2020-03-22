@@ -15,7 +15,7 @@
   <body>
     <nav class="navbar" role="navigation" aria-label="main navigation>
         <div class"navbar-start">
-          {% comment %} <a class="navbar-item" href="{% url 'catch' %}">Catch A Pikachu!</a> {% endcomment %}
+          <a class="navbar-item" href="{% url 'catch' %}">Catch A Pikachu!</a>
           <a class="navbar-item" href="{% url 'index' %}">View the Pikabase!</a>
           {% if user.is_authenticated %}
           <div class="navbar-item has-dropdown is-active">

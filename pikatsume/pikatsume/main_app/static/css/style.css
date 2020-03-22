@@ -40,6 +40,9 @@ footer {
   color: #333;
 }
 /* ===  TILES === */
+.tile {
+  flex-flow: row wrap;
+}
 .box {
   border: 3px solid #333;
   box-shadow: 7px 7px rgba(54,54,54,0.5);
@@ -50,6 +53,9 @@ footer {
   border-color: goldenrod;
   transition: ease 0.3s;
   cursor: crosshair;
+}
+.box img {
+  width: 100%;
 }
 /* ===  FORMS/INPUT  === */
 input {
