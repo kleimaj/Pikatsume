@@ -13,28 +13,35 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
   <body>
-      <header class="navbar-fixed">
-          <nav>
-            <div class="nav-wrapper">
-              <ul>
-                {% comment %} <li><a href="{% url 'catch' %}">Catch A Pikachu!</a></li> {% endcomment %}
-                {% if user.is_authenticated %}
-                  <li><a href="{% url 'profile' %}">My Profile</a></li>
-                  <li><a href="{% url 'logout' %}">Log Out</a></li>
-                {% else %}
-                  <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                  <li><a href="{% url 'login' %}">Log In</a></li>
-                {% endif %}
-               </ul>
-            </div>
-          </nav>
-      </header>
-      <main>
-        <section class="section">
-          {% block content %}
-          {% endblock %}
-        </section>
-      </main>
-      <footer>&copy; 2020 Pika Pika</footer>
+    <nav class="navbar" role="navigation" aria-label="main navigation>
+        <div class"navbar-start">
+          {% comment %} <a class="navbar-item" href="{% url 'catch' %}">Catch A Pikachu!</a> {% endcomment %}
+          {% if user.is_authenticated %}
+          <div class="navbar-item has-dropdown is-active">
+              <a class="navbar-link is-arrowless">
+                <span class="icon is-large">
+                  <i class="fas fa-3x fa-cog"></i>
+                </span>
+              </a>
+          
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="{% url 'profile' %}">My Profile</a>
+                <a class="navbar-item" href="{% url 'logout' %}">Log Out</a>
+              </div>
+
+          </div>
+          {% else %}
+            <a class="navbar-item" href="{% url 'signup' %}">Sign Up</a>
+            <a class="navbar-item" href="{% url 'login' %}">Log In</a>
+          {% endif %}
+        </div>
+    </nav>
+    <main>
+      <section class="section">
+        {% block content %}
+        {% endblock %}
+      </section>
+    </main>
+    <footer>&copy; 2020 Pika Pika</footer>
   </body>
 </html>

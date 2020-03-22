@@ -26,13 +26,20 @@ footer {
   padding-top: 0;
   text-align: right;
 }
-nav {
-  background-color: #fdd835;
-}
 
 /* =============== */
 /* BULMA OVERRIDES */
 /* =============== */
-.tile {
-  margin: 5px auto;
+/* .has-dropdown {
+  margin-left: 2rem;
+} */
+.navbar a:link, a:visited {
+  color: goldenrod;
+  font-weight: 900;
+}
+.navbar a:hover {
+  color: #333;
+}
+.box {
+  margin: 50px;
 }
