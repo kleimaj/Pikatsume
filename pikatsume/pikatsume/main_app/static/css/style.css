@@ -11,6 +11,7 @@ main {
   flex: 1 0 auto;
   font-family: 'Inter', sans-serif;
 }
+
 h1,h2,h3,h4,h5 {
   font-weight: 900;
   font-family: 'Exo', sans-serif;
@@ -44,6 +45,7 @@ footer {
   color: #333;
   border-radius: 15px;
 }
+
 
 /* ===  TILES === */
 .tile {
@@ -113,4 +115,14 @@ label {
   background: transparent;
   color: goldenrod;
   transition: ease 0.3s;
+}
+
+/* ===================== */
+/* === MEDIA QUERIES === */
+/* ===================== */
+@media only screen and (max-width: 600px) {
+  .navbar-item{
+    display: inline;
+  }
+
 }
