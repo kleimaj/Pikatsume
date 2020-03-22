@@ -37,12 +37,12 @@ class Pika(models.Model):
 
 class Profile(models.Model):
     name = models.CharField(max_length=255)
-    puffins = models.CharField(max_length=500)
+    poffins = models.CharField(max_length=500)
     pikachu = models.ManyToManyField(Ptype)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     
     def __str__(self):
-        return self.user
+        return self.name
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):

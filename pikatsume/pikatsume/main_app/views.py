@@ -16,7 +16,13 @@ def signup(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
+            # profile = Profile()
             login(request, user)
+            # Create default profile
+            print("CREATING PROFILE ~~~~~")
+            profile = Profile(name = request.user, poffins=30)
+            print(profile)
+            profile.save()
             return redirect('profile')
         else:
             error_message = 'Invalid sign up - try again'
@@ -73,7 +79,11 @@ def catch_confirm(request):
     # user = request.user
     # print(user)
     # profile = user.profile
-    profile = Profile.objects.get(user=request.user)
+    # profile = Profile.objects.get(user=request.user)
+    profile = Profile.objects.first()
+    print(profile)
+    print(request.user)
+    print("~~~~~~~")
     return render(request, 'catch/catch_confirm.html', {'profile':profile})
 @login_required
 def caught(request, profile_id):
