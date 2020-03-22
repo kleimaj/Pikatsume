@@ -7,3 +7,7 @@ class PikaForm(forms.ModelForm):
         fields = ('name', 'pic')
 
 
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('name', 'puffins', 'pikachu')
