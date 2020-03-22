@@ -70,9 +70,10 @@ def catch(request):
     return render(request, 'catch/catch.html')
 @login_required
 def catch_confirm(request):
-    user = request.user
-    print(user)
-    profile = user.profile
+    # user = request.user
+    # print(user)
+    # profile = user.profile
+    profile = Profile.objects.get(user=request.user)
     return render(request, 'catch/catch_confirm.html', {'profile':profile})
 @login_required
 def caught(request, profile_id):
