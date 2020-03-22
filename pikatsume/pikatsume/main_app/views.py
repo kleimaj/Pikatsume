@@ -70,14 +70,17 @@ def catch(request):
     return render(request, 'catch/catch.html')
 @login_required
 def catch_confirm(request):
-    return render(request, 'catch/catch_confirm.html')
-@login_required
-def caught(request):
-    # get user
     user = request.user
     print(user)
-    # get this user's profile
     profile = user.profile
+    return render(request, 'catch/catch_confirm.html', {'profile':profile})
+@login_required
+def caught(request, profile_id):
+    # get this user's profile
+    profile = Profile.objects.get(id=profile_id)
     new_pika = Pika.objects.order_by("?").first()
     profile.pikas.add(new_pika)
-    return render(request, 'catch/caught.html', {'pika':new_pika})
+    return render(request, 'catch/caught.html', {
+        'pika':new_pika,
+        'profile':profile,
+        })
