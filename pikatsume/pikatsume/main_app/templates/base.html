@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>(o^.^o)Pikatsume!</title>
     <!-- CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Exo|Inter:200,300,400,500,600,700,800,900&display=swap"" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo|Inter:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/bulma.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- JS -->
@@ -16,19 +16,18 @@
     <nav class="navbar" role="navigation" aria-label="main navigation>
         <div class"navbar-start">
           {% comment %} <a class="navbar-item" href="{% url 'catch' %}">Catch A Pikachu!</a> {% endcomment %}
+          <a class="navbar-item" href="{% url 'index' %}">View the Pikabase!</a>
           {% if user.is_authenticated %}
           <div class="navbar-item has-dropdown is-active">
               <a class="navbar-link is-arrowless">
                 <span class="icon is-large">
-                  <i class="fas fa-3x fa-cog"></i>
+                  <i class="fas fa-2x fa-cog"></i>
                 </span>
               </a>
-          
               <div class="navbar-dropdown">
                 <a class="navbar-item" href="{% url 'profile' %}">My Profile</a>
                 <a class="navbar-item" href="{% url 'logout' %}">Log Out</a>
               </div>
-
           </div>
           {% else %}
             <a class="navbar-item" href="{% url 'signup' %}">Sign Up</a>
@@ -38,8 +37,10 @@
     </nav>
     <main>
       <section class="section">
-        {% block content %}
-        {% endblock %}
+        <div class="container">
+          {% block content %}
+          {% endblock %}
+        </div>
       </section>
     </main>
     <footer>&copy; 2020 Pika Pika</footer>

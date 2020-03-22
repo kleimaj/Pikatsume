@@ -30,9 +30,8 @@ footer {
 /* =============== */
 /* BULMA OVERRIDES */
 /* =============== */
-/* .has-dropdown {
-  margin-left: 2rem;
-} */
+
+/* ===   NAV  ==== */
 .navbar a:link, a:visited {
   color: goldenrod;
   font-weight: 900;
@@ -40,6 +39,66 @@ footer {
 .navbar a:hover {
   color: #333;
 }
+/* ===  TILES === */
 .box {
-  margin: 50px;
+  border: 3px solid #333;
+  box-shadow: 7px 7px rgba(54,54,54,0.5);
+  transition: ease 0.3s;
+}
+.box:hover {
+  color: goldenrod;
+  border-color: goldenrod;
+  transition: ease 0.3s;
+  cursor: crosshair;
+}
+/* ===  FORMS/INPUT  === */
+input {
+  font-family: 'Exo', sans-serif;
+  width: 50%;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 3px solid #333;
+  padding: 10px;
+  font-size: 1.8em;
+  transition: ease 0.3s;
+}
+input:focus {
+  border: 3px solid goldenrod;
+  transition: ease 0.3s;
+}
+input[value]{
+  font-size: 1.5em;
+}
+label {
+  font-family: 'Exo', sans-serif;
+  font-size: 2em;
+  transition: ease 0.3s;
+  display: block;
+  margin-top: 1.3em;
+}
+.helptext {
+  display: block;
+  margin-top: 10px;
+}
+.btn {
+  width: 25%;
+  font-family: 'Exo', sans-serif;
+  font-weight: 600;
+  font-size: 2em;
+  flex-flow: row;
+  align-items: flex-start;
+  background: gold;
+  margin: 2em 0;
+  border: 5px solid #333;
+  border-radius: 10px;
+  box-shadow: 3px 3px #777;
+  background: rgba(255, 255, 255, 0.8);
+  transition: ease-out 0.3s;
+}
+.btn:hover {
+  border: 5px solid goldenrod;
+  background: transparent;
+  color: goldenrod;
+  transition: ease 0.3s;
 }

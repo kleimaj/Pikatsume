@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Sign Up</h1>
+<h1 class="title is-1">Sign Up</h1>
+<p class="subtitle">You're one step away from starting your Pikachu collection!</p>
 <form method="post" action="{% url 'signup' %}">
   {% csrf_token %}
   {{ form.as_p }}
-  <input type="submit" class="button" value="signup">
+  <button type="submit" class="btn">Submit!</button>
 </form>
 
 {% endblock %}
