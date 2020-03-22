@@ -11,11 +11,11 @@ ORIGIN = (
     ('G', 'Game'),
     ('F', 'Fan-made'),
 )
-# class Ptype(models.Model):
-#     pika_type = models.CharField(max_length=100)
+class Ptype(models.Model):
+    pika_type = models.CharField(max_length=100)
     
-#     def __str__(self):
-#         return self.pika_type
+    def __str__(self):
+        return self.pika_type
 
 class Pika(models.Model):
     name = models.CharField(max_length=255)
@@ -36,12 +36,13 @@ class Pika(models.Model):
 #         return self.get_origin_display()
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
-    pikas = models.ManyToManyField(Pika)
-
-    # def __str__(self):
-    #     return self.user
+    puffins = models.CharField(max_length=500)
+    pikachu = models.ManyToManyField(Ptype)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.user
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
