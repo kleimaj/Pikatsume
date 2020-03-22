@@ -22,24 +22,27 @@ a:link, a:visited {
 a:hover {
   color: goldenrod;
 }
+
 footer {
   padding-top: 0;
   text-align: right;
 }
-.bold {
-  font-weight: 900;
-}
+
 /* =============== */
 /* BULMA OVERRIDES */
 /* =============== */
 
 /* ===   NAV  ==== */
+.navbar.is-fixed-top {
+  background-color: rgba(255, 255, 255, 0.8);
+}
 .navbar a:link, a:visited {
   color: goldenrod;
   font-weight: 900;
 }
 .navbar a:hover {
   color: #333;
+  border-radius: 15px;
 }
 /* ===  TILES === */
 .tile {
