@@ -100,6 +100,8 @@ def caught(request):
     # profile.poffins -= 5
     new_pika = Pika.objects.order_by("?").first()
     profile.pikachu.add(new_pika.id)
+    profile.save()
+    print(profile.pikachu.all())
     return render(request, 'catch/caught.html', {
         'pika':new_pika,
         'profile':profile,
