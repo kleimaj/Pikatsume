@@ -10,8 +10,8 @@
           <img src="{{ pika.pic }}" alt="A Pikachu">
         </div>
         <div class="card-action">
-          <a href="{% url 'pikas_update' part.id %}">Edit</a>
-          <a href="{% url 'parts_delete' part.id %}">Delete</a>
+          {% comment %} <a href="{% url 'pikas_update' part.id %}">Edit</a> {% endcomment %}
+          {% comment %} <a href="{% url 'parts_delete' part.id %}">Delete</a> {% endcomment %}
         </div>
       </div>
     {% endfor %}
