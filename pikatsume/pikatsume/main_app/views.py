@@ -79,18 +79,19 @@ def catch_confirm(request):
     # user = request.user
     # print(user)
     # profile = user.profile
-    # profile = Profile.objects.get(user=request.user)
-    profile = Profile.objects.first()
-    print(profile)
-    print(request.user)
-    print("~~~~~~~")
+    profile = Profile.objects.get(user=request.user)
+    profile.poffins = int(profile.poffins)
     return render(request, 'catch/catch_confirm.html', {'profile':profile})
 @login_required
-def caught(request, profile_id):
+def caught(request):
     # get this user's profile
-    profile = Profile.objects.get(id=profile_id)
+    profile = Profile.objects.get(user=request.user)
+    print(profile.poffins)
+    print(profile.pikachu)
+    # decrement poffins by 5
+    # profile.poffins -= 5
     new_pika = Pika.objects.order_by("?").first()
-    profile.pikas.add(new_pika)
+    profile.pikachu.add(new_pika.id)
     return render(request, 'catch/caught.html', {
         'pika':new_pika,
         'profile':profile,

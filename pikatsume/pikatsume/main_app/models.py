@@ -17,22 +17,22 @@ class Profile(models.Model):
     name = models.CharField(max_length=255)
     poffins = models.IntegerField()
 
-
     pikachu = models.ManyToManyField(Pika)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     
-    # def __str__(self):
-    #     return self.name
+    def __str__(self):
+        return self.name
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         print("~~~~~~~~~")
-        print(instance)
+        # print(instance)
         # print(instance.user)
-        print(instance.username)
+        # print(instance.username)
         Profile.objects.create(user=instance, poffins=30, name=instance.username)
     
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
+    print("HERE!")
