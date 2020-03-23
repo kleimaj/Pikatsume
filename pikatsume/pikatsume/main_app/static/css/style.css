@@ -201,4 +201,13 @@ img.scale-img{
   p.subtitle.is-3 {
     font-size: 14px;
   }
+
+}
+@media only screen and (max-width: 450px) {
+  h2.title.is-2 {
+    font-size: 1.8em;
+  }
+  img.scale-img{
+    width: 100%;
+  }
 }
