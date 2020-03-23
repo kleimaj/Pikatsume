@@ -1,15 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="columns is-centered">
-    <div class="column is-half vh-container" id="catch-container">
-    <h2 title="title is-2">Congratulations!</h2>
-    <h3 title="title is-3">You caught...</h3>
-    <h2 title="title is-2">{{pika.name}}</h2>
-    <img src="{{pika.pic}}" alt="pikachu" />
 
-    <a class="btn catch-btn" href="{% url 'catch_confirm' %}">Catch Another!</a>
-    <a class="btn catch-btn" href="#">Buy More Poffins</a>
-    <a class="btn catch-btn" href="#">View Collection</a>
+<div class="vh-container">
+    <h2 class="title is-2">Congratulations!</h2>
+    <h3 class="title is-3">You caught...</h3>
+    <div class="card box">
+        <div class="card-content">
+            <h2 class="title is-2">{{pika.name}}</h2>
+            <div class="card-image">
+                <figure class="image">
+                    <img class="scale-img" src="{{pika.pic}}" alt="pikachu" />
+                </figure>
+            </div>
+        </div>
     </div>
+    <a class="catch-btn btn" href="{% url 'caught' %}">Catch Another!</a>
+    <a class="catch-btn btn" href="#">Buy More Poffins</a>
+    <a class="btn catch-btn" href="{% url 'profile' %}">View Collection</a>
 </div>
+
 {% endblock %}

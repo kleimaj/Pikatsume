@@ -124,7 +124,6 @@ a.profile-link:hover{
 .box img {
   width: 100%;
 }
-
 /* ===  FORMS/INPUT  === */
 
 input {
@@ -184,6 +183,9 @@ a.catch-btn.btn:link, a.catch-btn.btn:visited {
   margin-bottom: 5px;
   width: 50%;
 }
+img.scale-img{
+  width: 400px;
+}
 
 /* ===================== */
 /* === MEDIA QUERIES === */
@@ -194,6 +196,7 @@ a.catch-btn.btn:link, a.catch-btn.btn:visited {
   }
   a.catch-btn.btn:link, a.catch-btn.btn:visited {
     width: 100%;
+    font-size: 18px;
   }
   p.subtitle.is-3 {
     font-size: 14px;
