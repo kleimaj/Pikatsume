@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>(o^.^o)Pikatsume!</title>
     <!-- CSS -->
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}" />
     <link href="https://fonts.googleapis.com/css?family=Exo|Inter:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/bulma.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- JS -->
     <script defer src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -18,13 +20,13 @@
     <main>
       <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation>
           <div class="navbar-brand">
-            <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+            <a role="button" class="navbar-burger animated" data-target="navMenu" aria-label="menu" aria-expanded="false">
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
             </a>
           </div>
-          <div class="navbar-menu" id="navMenu">
+          <div class="navbar-menu animated" id="navMenu">
             <div class="navbar-start">
               <a class="navbar-item" href="{% url 'home'  %}"><i class="fas fa-2x fa-bolt"></i>
                 <span class="mobile-label">Home</span>
@@ -47,16 +49,16 @@
             </div>
               {% endif %}
           </div>
-
     </nav>
-
-      <section class="section">
-        <div class="container">
-          {% block content %}
-          {% endblock %}
-        </div>
-      </section>
-    </main>
-    <footer>&copy; 2020 Pika Pika</footer>
+    <section class="section">
+        {% block content %}
+        {% endblock %}
+    </section>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p class="subtitle is-3">&copy; 2020 team CH8TY</h3>
+      </div>
+    </footer>
+  </main>
   </body>
 </html>
