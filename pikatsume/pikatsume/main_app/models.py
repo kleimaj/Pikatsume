@@ -24,17 +24,6 @@ class Pika(models.Model):
     def __str__(self):
         return self.name
 
-# class Origin(models.Model):
-#     origin = models.CharField(
-#         max_length=1,
-#         choices=ORIGIN,
-#         default=ORIGIN[0][0]
-#     )
-#     pika = models.ForeignKey(Pika, on_delete=models.CASCADE)
-
-#     def __str__(self):
-#         return self.get_origin_display()
-
 class Profile(models.Model):
     name = models.CharField(max_length=255)
     poffins = models.CharField(max_length=500)

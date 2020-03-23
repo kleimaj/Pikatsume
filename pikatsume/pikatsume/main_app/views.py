@@ -70,6 +70,10 @@ def update_profile(request):
         profile_form = ProfileForm(instance=request.user.profile)
         return render(request, 'profile.html', {'profile_form': profile_form})
 
+def delete_profile(request, car_id):
+    Profile.objects.get(id=profile_id).delete()
+    return redirect('index') 
+     
 # Catch (Game Logic Controllers)
 @login_required
 def catch(request):
