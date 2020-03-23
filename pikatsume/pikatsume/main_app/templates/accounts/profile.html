@@ -11,16 +11,18 @@
     <a href="{% url 'catch'%}" class="profile-link">Buy More Poffins</a>
     
     <h3 class="title is-3">My Pikachus</h3>
+     <a href="{% url 'catch'%}" class="profile-link">Catch More Pikachus</a>
+   
+    <div class="tile is-ancestor my-pikas">
     {% comment %} {{user.profile.pikachu.all}} {% endcomment %}
     {% for pika in user.profile.pikachu.all %}
-    <h4>{{pika.name}}</h4>
-    <img src="{{pika.pic}}">
+        <div class="tile is-parent is-3">
+            <div class="tile is-child box pikabase-container">
+                <h4 class="title is-4">{{pika.name}}</h4>
+                <img src="{{pika.pic}}">
+            </div>
+        </div>
     {% endfor %}
-    <a href="{% url 'catch'%}" class="profile-link">Catch More Pikachus</a>
-    {% comment %} 
-        {{ user.profile.pikachus }}
-        If pikas.length > 0, for pika in pikas return pika 
-        Else show you have no pikachus (sad ketchup chu picture)
-    {% endcomment %}
+   
 </div>
 {% endblock %}
