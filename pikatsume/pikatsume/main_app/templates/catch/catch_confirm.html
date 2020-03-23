@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <img src="https://images-na.ssl-images-amazon.com/images/I/619FF-ONnuL._AC_SX425_.jpg" style="width: 30px; height: 30px;" alt="pokeball"></img>
+    {% if profile.poffins > 5 %}
+        <h2>Are you sure?</h2>
+        <h3>You currently have {{profile.poffins}} Poffins!</h3>
+        <a href="{% url 'caught' %}"><button>Catch a Pikachu (5 Poffins)</button></a>
+    {% else %}
+        <h3>You currently have {{profile.poffins}} Poffins!</h3>
+        <h2>You don't have enough Poffins!!</h2>
+    
+    {% endif %}
+        <a href="#"><button>Buy More Poffins</button></a>
+
+{% endblock %}

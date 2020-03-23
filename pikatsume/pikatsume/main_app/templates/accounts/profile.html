@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container" id="profile-container">
+
+    <h1 class="title is-1">Hello,  {{ user.username }}! </h1>
+    <a href="{% url 'profile_form'%}" class="profile-link">Edit My Profile</a>
+    
+    <h3 class="title is-3">My Poffins: 
+        <span class="poffin-count">{{ user.profile.poffins }}</span></p>
+    </h3>
+    <a href="{% url 'catch'%}" class="profile-link">Buy More Poffins</a>
+    
+    <h3 class="title is-3">My Pikachus</h3>
+    <a href="{% url 'catch'%}" class="profile-link">Catch More Pikachus</a>
+    {% comment %} 
+        {{ user.profile.pikachus }}
+        If pikas.length > 0, for pika in pikas return pika 
+        Else show you have no pikachus (sad ketchup chu picture)
+    
+    {% endcomment %}
+</div>
+{% endblock %}

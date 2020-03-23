@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(o^.^o)Pikatsume!</title>
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Mouse+Memoirs|Inter:200,300,400,500,600,700,800,900&display=swap"" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <!-- JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script defer src="{% static 'js/interactions.js' %}"></script>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="content">
+                <section class="section main-section">
+                    <a href="{% url 'catch' %}">
+                        <img class="is-pulled-left" id="pika-home-img" src="https://i.ibb.co/6tYzGn9/pikachu-hop.gif" alt="A Pikachu" />
+                    </a>
+                    <h1 class="title is-1">Pikatsume!</h1>
+                    <p class="subtitle is-3">Pikachu Collector</p>
+                </section>
+                <section class="section main-section" id="index-menu">
+                    <a href="{% url 'catch' %}" class="home-btn"><i class="fas fa-bolt"></i> Catch a Pikachu!</a>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'profile' %}" class="home-btn">View Profile</a>
+                        <a href="{% url 'logout' %}" class="home-btn">Log Out</a>
+                    {% else %}
+                        <a href="{% url 'signup' %}" class="home-btn">Sign Up</a>
+                        <a href="{% url 'login' %}" class="home-btn">Log In</a>
+                    {% endif %}
+                    <br />
+                </section>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

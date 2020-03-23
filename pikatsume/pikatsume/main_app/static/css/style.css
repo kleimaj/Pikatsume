@@ -1,0 +1,191 @@
+/* ================= */
+/* === PAGE LOAD === */
+/* ================= */
+section {
+  animation: transitionIn 0.75s;
+}
+@keyframes transitionIn {
+    from {
+      opacity: 0;
+      transform: rotateY(-10deg);
+    }
+    to {
+      opacity: 1;
+      transform:rotateY(0);
+    }
+}
+/* ================ */
+/* ==== GLOBAL ==== */
+/* ================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+}
+main {
+  flex: 1 0 auto;
+  font-family: 'Inter', sans-serif;
+}
+h1,h2,h3,h4,h5 {
+  font-weight: 900;
+  font-family: 'Exo', sans-serif;
+}
+a:link, a:visited {
+  color: #333;
+}
+a:hover {
+  color: goldenrod;
+}
+footer {
+  padding-top: 0;
+  text-align: right;
+}
+/* =============== */
+/* == ANIMATION == */
+/* =============== */
+
+.pikaball {
+  margin: 0 auto;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  cursor: pointer;
+}
+
+/* =============== */
+/* BULMA OVERRIDES */
+/* =============== */
+
+/* ===   NAV  ==== */
+.navbar.is-fixed-top {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 25px;
+}
+.navbar a:link, a:visited {
+  text-transform: uppercase;
+  color: goldenrod;
+  font-weight: 900;
+}
+.navbar a:hover {
+  color: #333;
+  border-radius: 15px;
+}
+.mobile-label {
+  display: none;
+}
+/* ===  TILES === */
+.tile {
+  flex-flow: row wrap;
+}
+.box {
+  border: 3px solid #333;
+  box-shadow: 7px 7px rgba(54,54,54,0.5);
+  transition: ease 0.3s;
+}
+.box:hover {
+  color: goldenrod;
+  border-color: goldenrod;
+  transition: ease 0.3s;
+  cursor: crosshair;
+}
+.box img {
+  width: 100%;
+}
+
+/* ===  FORMS/INPUT  === */
+input {
+  font-family: 'Exo', sans-serif;
+  width: 90%;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 3px solid #333;
+  padding: 10px;
+  font-size: 1.8em;
+  transition: ease 0.3s;
+}
+input:focus {
+  border: 3px solid goldenrod;
+  transition: ease 0.3s;
+}
+input[value]{
+  font-size: 1.5em;
+}
+label {
+  font-family: 'Exo', sans-serif;
+  font-size: 2em;
+  transition: ease 0.3s;
+  display: block;
+  margin-top: 1.3em;
+}
+.helptext {
+  display: block;
+  margin-top: 10px;
+}
+.btn {
+  font-family: 'Exo', sans-serif;
+  font-weight: 600;
+  font-size: 2em;
+  flex-flow: row;
+  align-items: flex-start;
+  background: gold;
+  margin:  0;
+  padding: 5px 10px;
+  border: 3px solid #333;
+  border-radius: 10px;
+  box-shadow: 3px 3px #777;
+  background: rgba(255, 255, 255, 0.8);
+  transition: ease-out 0.3s;
+  cursor: pointer;
+}
+.btn:hover {
+  border: 5px solid goldenrod;
+  background: transparent;
+  color: goldenrod;
+  transition: ease 0.3s;
+}
+
+button.catch-btn{
+  margin-top: 5px;
+  margin-bottom: 0;
+  width: 50%;
+}
+a.profile-link:link, a.profile-link:visited{
+  font-weight: 900;
+  text-transform: uppercase;
+}
+a.profile-link:hover{
+  color: #333;
+}
+
+/* ======================= */
+/* = CONTAINER OVERRIDES = */
+/* ======================= */
+.vh-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+
+/* ===================== */
+/* === MEDIA QUERIES === */
+/* ===================== */
+@media only screen and (max-width: 600px) {
+  .mobile-label {
+    display: inline;
+  }
+  button.catch-btn{
+    width: 100%;
+  }
+  p.subtitle.is-3 {
+    font-size: 14px;
+  }
+}
