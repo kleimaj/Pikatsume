@@ -103,5 +103,61 @@
             "name" : "Surprised Pikachu",
             "pic" : "https://i.ibb.co/z4gw8jd/surprisedpika.jpg"
         }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "14",
+        "fields" : {
+            "name" : "Cool",
+            "pic" : "https://i.ibb.co/XSBHnDF/cool-chu.png"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "15",
+        "fields" : {
+            "name" : "Sleepychu",
+            "pic" : "https://i.ibb.co/SwtLzPn/sleep-chu.jpg"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "16",
+        "fields" : {
+            "name" : "Basschu",
+            "pic" : "https://i.ibb.co/fCNpndG/bass-chu.png"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "17",
+        "fields" : {
+            "name" : "Pika Juice",
+            "pic" : "https://i.ibb.co/Chw0BZR/pikajuice.png"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "18",
+        "fields" : {
+            "name" : "Deflated Chu",
+            "pic" : "https://i.ibb.co/NZx6Q0P/giphy.gif"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "19",
+        "fields" : {
+            "name" : "Plzkachu",
+            "pic" : "https://i.ibb.co/rsGTBQ6/plzkachu.gif"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "20",
+        "fields" : {
+            "name" : "Pikanetta",
+            "pic" : "https://i.ibb.co/BTPJ1fJ/pikanetta.gif"
+        }
     }
 ]
