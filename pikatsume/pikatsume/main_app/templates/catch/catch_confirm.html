@@ -7,7 +7,7 @@
         <br />
     {% if profile.poffins > 5 %}
         <h2 class="title is-3">You currently have {{profile.poffins}} Poffins!</h2>
-        <a class="btn catch-btn" href="{% url 'caught' %}" >Catch a Pikachu (5 Poffins)</a>
+        <a class="btn catch-btn" href="{% url 'caught' %}" >Catch a Pikachu<br /> (5 Poffins)</a>
     {% else %}
         {% if profile.poffins is 1 %}
          <h3 class="title is-3">You currently have {{profile.poffins}} Poffin!</h3>
