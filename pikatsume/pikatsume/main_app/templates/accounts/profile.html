@@ -3,7 +3,6 @@
 <div class="container" id="profile-container">
 
     <h1 class="title is-1">Hello,  {{ user.username }}! </h1>
-
     <a href="{% url 'profile_form'%}" class="profile-link">Edit My Profile</a>
     
     <h3 class="title is-3">My Poffins: 
@@ -12,18 +11,11 @@
     <a href="{% url 'catch'%}" class="profile-link">Buy More Poffins</a>
     
     <h3 class="title is-3">My Pikachus</h3>
+     <a href="{% url 'catch'%}" class="profile-link">Catch More Pikachus</a>
+   
+    <div class="tile is-ancestor my-pikas">
     {% comment %} {{user.profile.pikachu.all}} {% endcomment %}
     {% for pika in user.profile.pikachu.all %}
-    <h4>{{pika.name}}</h4>
-    <img class="pika_img" src="{{pika.pic}}">
-    {% comment %} <i class="fas fa-trash-alt"></i> {% endcomment %}
-    {% endfor %}
-    <a href="{% url 'catch'%}" class="profile-link">Catch More Pikachus</a>
-    {% comment %} 
-        {{ user.profile.pikachus }}
-        If pikas.length > 0, for pika in pikas return pika 
-        Else show you have no pikachus (sad ketchup chu picture)
-    {% endcomment %}
-</div>
-
-{% endblock %}
+            <div class="tile is-child box pikabase-container">
+                <h4 class="title is-4">{{pika.name}}</h4>
+                <img src="{{pika.pic}}">
