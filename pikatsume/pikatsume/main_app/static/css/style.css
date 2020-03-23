@@ -1,6 +1,7 @@
 /* ================= */
 /* === PAGE LOAD === */
 /* ================= */
+
 section {
   animation: transitionIn 0.75s;
 }
@@ -14,9 +15,11 @@ section {
       transform:rotateY(0);
     }
 }
+
 /* ================ */
 /* ==== GLOBAL ==== */
 /* ================ */
+
 html {
   scroll-behavior: smooth;
 }
@@ -45,6 +48,7 @@ footer {
   padding-top: 0;
   text-align: right;
 }
+
 /* =============== */
 /* == ANIMATION == */
 /* =============== */
@@ -61,7 +65,29 @@ footer {
 /* BULMA OVERRIDES */
 /* =============== */
 
-/* ===   NAV  ==== */
+/* === CONTAINERS === */
+
+.vh-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* === LINKS  === */
+
+a.profile-link:link, a.profile-link:visited{
+  font-weight: 900;
+  text-transform: uppercase;
+}
+a.profile-link:hover{
+  color: #333;
+}
+
+
+/* ===  NAV  === */
+
 .navbar.is-fixed-top {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 10px 25px;
@@ -78,7 +104,9 @@ footer {
 .mobile-label {
   display: none;
 }
+
 /* ===  TILES === */
+
 .tile {
   flex-flow: row wrap;
 }
@@ -98,6 +126,7 @@ footer {
 }
 
 /* ===  FORMS/INPUT  === */
+
 input {
   font-family: 'Exo', sans-serif;
   width: 90%;
@@ -149,31 +178,11 @@ label {
   color: goldenrod;
   transition: ease 0.3s;
 }
-
 button.catch-btn{
   margin-top: 5px;
   margin-bottom: 0;
   width: 50%;
 }
-a.profile-link:link, a.profile-link:visited{
-  font-weight: 900;
-  text-transform: uppercase;
-}
-a.profile-link:hover{
-  color: #333;
-}
-
-/* ======================= */
-/* = CONTAINER OVERRIDES = */
-/* ======================= */
-.vh-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 100vh;
-}
-
 
 /* ===================== */
 /* === MEDIA QUERIES === */
