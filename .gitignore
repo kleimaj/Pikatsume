@@ -81,15 +81,14 @@ target/
 # pyenv
 .python-version
 
-<<<<<<< HEAD
-=======
+
 # env
 *.env
+
 
 # vscode
 *.vscode
 
->>>>>>> master
 # pipenv
 #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
 #   However, in case of collaboration, if having platform-specific dependencies or dependencies
@@ -174,4 +173,17 @@ dmypy.json
 # Pyre type checker
 
 # End of https://www.gitignore.io/api/django,python
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
+# End of https://www.gitignore.io/api/django,visualstudiocode
 wireframe.png
