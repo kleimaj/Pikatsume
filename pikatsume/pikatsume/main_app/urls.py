@@ -14,6 +14,6 @@ urlpatterns = [
     path('catch/', views.catch, name='catch'),
     path('catch/confirm', views.catch_confirm, name='catch_confirm'),
     path('caught/', views.caught, name='caught'),
-    path('profile/<int:profile_id>/delete', views.delete_profile, name='delete_profile'),
-    path('profile/<int:profile_id>/edit', views.update_profile, name='update_profile')
+    path('profile/delete', views.delete_profile, name='delete_profile'),
+    path('profile/edit', views.update_profile, name='update_profile')
 ]

@@ -1,21 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<<<<<<< HEAD
-  <h1>Hey {{ user.username }}! Do you want to Delete your Pikas</h1>
-=======
   <h1>Hey {{ user.username }}! Do you want to Delete your Profile</h1>
->>>>>>> 28f87a2ba0ba274188b62d91c4c268158cf8788e
 
   <h4>Are you sure you want to delete <span class="teal-text">{{ object.name }}</span>?</h4>
 
   <form action="" method="POST">
     {% csrf_token %}
     <input type="submit" value="Yes - Delete!" class="btn">
-<<<<<<< HEAD
-    <a href="{% url 'parts_detail' object.id %}">Cancel</a>
-=======
-    <a href="{% url 'profile_detail' object.id %}">Cancel</a>
->>>>>>> 28f87a2ba0ba274188b62d91c4c268158cf8788e
+    <a href="{% url 'index' object.id %}">Cancel</a>
   </form>
 {% endblock %}

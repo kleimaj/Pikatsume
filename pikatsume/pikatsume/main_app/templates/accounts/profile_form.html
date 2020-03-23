@@ -2,13 +2,17 @@
 {% block content %}
 <div class="container" id="profile-container">
 
-    <h1 class="title is-1">Edit My Profile </h1>
+    <h1 class="title is-1">  Edit {{ user.username }} Profile </h1>
+    <div class="">
+    <p>
+        <a href="{% url 'update_profile' %}">Do you want to Edit</a>
+    </p>
+    <p>
+        <a href="{% url 'delete_profile'  %}">Do you want to Delete</a>
+    </p>
+    </div>
     <a class="profile-link" href="{% url 'profile' %}">Back to Profile</a>
     
-    {% comment %} 
-        Change username 
-        Delete account
-    {% endcomment %}
 
 </div>
 {% endblock %}
