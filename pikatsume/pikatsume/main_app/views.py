@@ -74,9 +74,14 @@ def update_profile(request):
         profile_form = ProfileForm(instance=request.user.profile)
         return render(request, 'profile_form.html', {'profile_form': profile_form})
 
-def delete_profile(request, profile_id):
-    Profile.objects.get(id=profile_id).delete()
-    return redirect('index') 
+@login_required
+def delete_profile(request):
+    # user = User.objects.get(username = request.user)
+    # print(request.user.username)
+    # profile.delete()
+    request.user.delete()
+    # Profile.objects.get(id=profile_id).delete()
+    return redirect('logout')
      
 # Catch (Game Logic Controllers)
 @login_required
@@ -101,7 +106,7 @@ def caught(request):
     new_pika = Pika.objects.order_by("?").first()
     profile.pikachu.add(new_pika.id)
     profile.save()
-    print(profile.pikachu.all())
+    # print(profile.pikachu.all())
     return render(request, 'catch/caught.html', {
         'pika':new_pika,
         'profile':profile,
