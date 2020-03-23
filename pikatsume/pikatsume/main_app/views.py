@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from django.dispatch import receiver
 from .models import Pika, Profile
-from .forms import PikaForm
+from .forms import PikaForm, ProfileForm
 # Create your views here.
 
 def signup(request):
@@ -45,6 +45,10 @@ def profile(request):
     return render(request, 'accounts/profile.html')
 
 @login_required
+def profile_edit(request):
+    return render(request, 'accounts/profile_form.html')
+
+@login_required
 def new_pika(request):
     if request.method == 'POST':
         new_form = PikaForm(request.POST)
@@ -65,10 +69,10 @@ def update_profile(request):
         profile_form = ProfileForm(request.POST, instance=request.user.profile)
         if profile_form.is_valid():
             profile_form.save()
-            return redirect('profile.html')
+            return redirect('profile')
     else:
         profile_form = ProfileForm(instance=request.user.profile)
-        return render(request, 'profile.html', {'profile_form': profile_form})
+        return render(request, 'profile_form.html', {'profile_form': profile_form})
 
 def delete_profile(request, car_id):
     Profile.objects.get(id=profile_id).delete()

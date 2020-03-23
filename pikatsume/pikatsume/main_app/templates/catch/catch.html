@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-    <img src="https://images-na.ssl-images-amazon.com/images/I/619FF-ONnuL._AC_SX425_.jpg" style="width: 30px; height: 30px;" alt="pokeball"></img>
-    <a href="{% url 'catch_confirm' %}"><button>Catch a Pikachu (5 Poffins)</button></a>
-    <a href="#"><button>Buy More Poffins</button></a>
+<div class="columns is-centered">
+    <div class="column is-half vh-container" id="catch-container">
+        <img class="pikaball animated shake" src="../../static/assets/images/pikaball.png" alt="pokeball" />
+        <br />
+        <button class="btn catch-btn" href="{% url 'catch_confirm' %}">Catch a Pikachu <br/> (5 Poffins)</button>
+        <button class="btn catch-btn" href="#">Buy More Poffins</button>
+    </div>
+</div>
 {% endblock %}

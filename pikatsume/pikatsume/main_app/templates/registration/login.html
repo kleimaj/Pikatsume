@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<h1 class="title is-1">Log In</h1>
-<p class="subtitle">Welcome back!</p>
-
-<form method="post" action="{% url 'login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit" class="btn button">Log In</button>
-</form>
-<br />
-<h3 class="title is-3">Don't have an account?</h3>
-<a class="title is-3" href="{% url 'signup' %}">Sign up!</a>
+<div class="container" id="login-container">
+  <h1 class="title is-1">Log In</h1>
+  <p class="subtitle">Welcome back!</p>
+  <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+    <button type="submit" class="btn">Log In</button>
+  </form>
+  <br />
+  <h3 class="title is-3">Don't have an account?</h3>
+  <a class="btn" href="{% url 'signup' %}">Sign up!</a>
+</div>
 {% endblock %}
