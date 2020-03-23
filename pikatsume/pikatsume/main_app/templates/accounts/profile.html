@@ -15,7 +15,8 @@
     {% comment %} {{user.profile.pikachu.all}} {% endcomment %}
     {% for pika in user.profile.pikachu.all %}
     <h4>{{pika.name}}</h4>
-    <img src="{{pika.pic}}">
+    <img class="pika_img" src="{{pika.pic}}">
+    {% comment %} <i class="fas fa-trash-alt"></i> {% endcomment %}
     {% endfor %}
     <a href="{% url 'catch'%}" class="profile-link">Catch More Pikachus</a>
     {% comment %} 
