@@ -178,9 +178,10 @@ label {
   color: goldenrod;
   transition: ease 0.3s;
 }
-button.catch-btn{
+a.catch-btn.btn:link, a.catch-btn.btn:visited {
+  text-align: center;
   margin-top: 5px;
-  margin-bottom: 0;
+  margin-bottom: 5px;
   width: 50%;
 }
 
@@ -191,7 +192,7 @@ button.catch-btn{
   .mobile-label {
     display: inline;
   }
-  button.catch-btn{
+  a.catch-btn.btn:link, a.catch-btn.btn:visited {
     width: 100%;
   }
   p.subtitle.is-3 {
