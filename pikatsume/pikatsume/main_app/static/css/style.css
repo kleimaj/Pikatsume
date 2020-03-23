@@ -151,6 +151,13 @@ button.catch-btn{
   margin-bottom: 0;
   width: 50%;
 }
+a.profile-link:link, a.profile-link:visited{
+  font-weight: 900;
+  text-transform: uppercase;
+}
+a.profile-link:hover{
+  color: #333;
+}
 
 /* ======================= */
 /* = CONTAINER OVERRIDES = */

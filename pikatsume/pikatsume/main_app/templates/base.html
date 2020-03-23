@@ -39,7 +39,7 @@
             <div class="navbar-end">
                 <a class="navbar-item" href="{% url 'catch' %}"> 
                   <i class="fas fa-2x fa-cookie"></i> 
-                  <span class="mobile-label">My Poffins:</span> 10</a>
+                  <span class="mobile-label">My Poffins:</span>&nbsp;&nbsp; {{ user.profile.poffins }}</a>
                 <a class="navbar-item" href="{% url 'logout' %}">Log Out</a>
             </div>
               {% else %}
