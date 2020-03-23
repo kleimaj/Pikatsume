@@ -2,7 +2,7 @@
 {% block content %}
 <div class="container" id="profile-container">
 
-    <h1 class="title is-1">Hello,  {{ user.username }}! </h1>
+    <h1 class="title is-1">Hello,  {{ user.profile.name }}! </h1>
     <a href="{% url 'profile_form'%}" class="profile-link">Edit My Profile</a>
     
     <h3 class="title is-3">My Poffins: 
