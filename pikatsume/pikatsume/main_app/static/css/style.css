@@ -17,6 +17,9 @@ section {
 /* ================ */
 /* ==== GLOBAL ==== */
 /* ================ */
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   display: flex;
@@ -93,6 +96,7 @@ footer {
 .box img {
   width: 100%;
 }
+
 /* ===  FORMS/INPUT  === */
 input {
   font-family: 'Exo', sans-serif;
@@ -132,7 +136,7 @@ label {
   background: gold;
   margin:  0;
   padding: 5px 10px;
-  border: 5px solid #333;
+  border: 3px solid #333;
   border-radius: 10px;
   box-shadow: 3px 3px #777;
   background: rgba(255, 255, 255, 0.8);
