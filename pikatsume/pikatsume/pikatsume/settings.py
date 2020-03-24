@@ -32,7 +32,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'main_app',
-    'djstripe',
     'stripe',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -76,7 +75,6 @@ STRIPE_LIVE_SECRET_KEY = os.environ.get("STRIPE_LIVE_SECRET_KEY", "sk_test_K9MiK
 STRIPE_TEST_PUBLIC_KEY = os.environ.get("STRIPE_TEST_PUBLIC_KEY", "pk_test_s0vrPAXzQaeHLZyRcMfcE8so00552nja3O")
 STRIPE_TEST_SECRET_KEY = os.environ.get("STRIPE_TEST_SECRET_KEY", "sk_test_K9MiK6jDypLjjdVo2cawRCA600oNOLrhST")
 STRIPE_LIVE_MODE = False  # Change to True in production
-DJSTRIPE_WEBHOOK_SECRET = "whsec_P7ZnHnOPbLtOgiuSz3SgG78xnjDNCqgN"  
 BASE_PRICE=100
 CURRENCY='usd'
 PAYMENT_METHODS='card'

@@ -13,8 +13,8 @@
         // a successful payment.
         // Instead use one of the strategies described in
         // https://stripe.com/docs/payments/checkout/fulfillment
-        successUrl: 'http://localhost:8000/store/success.html',
-        cancelUrl: 'http://localhost:8000/store/index.html',
+        successUrl: 'http://localhost:8000/store/success',
+        cancelUrl: 'http://localhost:8000/',
       })
       .then(function (result) {
         if (result.error) {
