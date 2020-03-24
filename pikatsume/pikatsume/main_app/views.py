@@ -131,7 +131,7 @@ def caught(request):
         'pika':new_pika,
         'profile':profile,
         })
-
+        
 # STORE STUFF
 @login_required
 def store(request):
