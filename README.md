@@ -11,13 +11,13 @@ USER STORY
 - User can remove a Pikachu from their collection
 - User can update their password, username, or delete their account
 
-![Wireframe](//project-Pikatsume/app_demo.png)
+![Wireframe](https://project-pikatsume/app_demo.png)
 
 
 <h1>Technologies Used:</h1>
 HTML, CSS, Javascript, Bulma, Django, Python3
 
-![ERD](//project-Pikatsume/ERD.png)
+![ERD](https://project-Pikatsume/ERD.png)
 
 <h1> Stripe as a stretch </h1>
 Offer donators free plush pika
