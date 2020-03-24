@@ -9,6 +9,7 @@ from django.dispatch import receiver
 from .models import Pika, Profile
 from .forms import PikaForm, ProfileForm
 import os, time
+from datetime import datetime, timezone
 
 # Create your views here.
 
@@ -21,8 +22,25 @@ def signup(request):
             # profile = Profile()
             login(request, user)
             #time log 
-            userLoginTime = time.strftime('%X %x %Z')
-            print(userLoginTime)
+            # userLoginTime = time.strftime('%X %x %Z')
+            # profile = Profile.objects.get(user=user)
+            # print(profile,"~~~~~~~")
+            # #  datetime.strptime
+            # print(profile.loginTime,"~~~ ~ ~ ~")
+            # print(type(profile.loginTime))
+            # lastTime = profile.loginTime
+
+            # newTime = datetime.now(timezone.utc)
+            # difference = newTime - lastTime
+            # print(difference)
+            # print(difference.days)
+            # if (difference.days >= 1):
+            #     print(difference.days)
+            # else:
+            #     print("not greater than a day")
+            # print("seconds: ",difference.seconds)
+            # if (difference.seconds)
+            # print(userLoginTime)
             # Create default profile
             return redirect('profile')
         else:
@@ -40,8 +58,30 @@ def about(request):
     return  render(request, 'about.html')
 
 def pikabase_index(request):
+    user = request.user
+    profile = Profile.objects.get(user=user)
+    
+    lastTime = profile.loginTime
+    newTime = datetime.now(timezone.utc)
+    difference = newTime - lastTime
+    
+    if (difference.seconds >= 1):
+        print(difference.days)
+        # Increment poffins by 10
+        profile.poffins += 10
+        # change loginTime to now in Profile
+        profile.loginTime = newTime
+        # send dailyReward
+        dailyReward = 1
+    else:
+        dailyReward = 0
+        # print("not greater than a day")
+    # print("seconds: ",difference.seconds)
+    
     pikas = Pika.objects.all()
-    return  render(request, 'pikabase/index.html', { 'pikas': pikas })
+    return  render(request, 'pikabase/index.html', { 
+        'pikas': pikas,
+        'dailyReward': dailyReward })
 
 @login_required
 def profile(request):
