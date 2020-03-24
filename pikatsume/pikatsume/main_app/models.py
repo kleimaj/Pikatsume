@@ -13,10 +13,12 @@ class Pika(models.Model):
     def __str__(self):
         return self.name
 
-class Profile(models.Model):
+class Profile(models.Model):        
     name = models.CharField(max_length=255)
+    loginTime = models.CharField(max_length=255)
+        
     poffins = models.IntegerField()
-
+    
     pikachu = models.ManyToManyField(Pika)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     

@@ -8,6 +8,8 @@ from django.db import transaction
 from django.dispatch import receiver
 from .models import Pika, Profile
 from .forms import PikaForm, ProfileForm
+import os, time
+
 # Create your views here.
 
 def signup(request):
@@ -18,6 +20,9 @@ def signup(request):
             user = form.save()
             # profile = Profile()
             login(request, user)
+            #time log 
+            userLoginTime = time.strftime('%X %x %Z')
+            print(userLoginTime)
             # Create default profile
             return redirect('profile')
         else:
@@ -25,7 +30,9 @@ def signup(request):
     form = UserCreationForm()
     context = { 'form' : form, 'error_message' : error_message }
     return render(request, 'registration/signup.html', context)
-
+# def loginCounter(request):
+   
+        
 def home(request):
     return render(request, 'home.html')
 
