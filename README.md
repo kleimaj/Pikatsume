@@ -12,7 +12,6 @@ USER STORY
 - User can update their password, username, or delete their account
 
 ![Wireframe](//project-Pikatsume/app_demo.png)
-<<<<<<< HEAD
 
 
 <h1>Technologies Used:</h1>
@@ -22,5 +21,3 @@ HTML, CSS, Javascript, Bulma, Django, Python3
 
 <h1> Stripe as a stretch </h1>
 Offer donators free plush pika
-=======
->>>>>>> submaster
