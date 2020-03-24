@@ -82,6 +82,7 @@ def delete_profile(request, car_id):
 @login_required
 def catch(request):
     return render(request, 'catch/catch.html')
+    
 @login_required
 def catch_confirm(request):
     # user = request.user
@@ -90,6 +91,7 @@ def catch_confirm(request):
     profile = Profile.objects.get(user=request.user)
     profile.poffins = int(profile.poffins)
     return render(request, 'catch/catch_confirm.html', {'profile':profile})
+
 @login_required
 def caught(request):
     # get this user's profile
@@ -106,3 +108,16 @@ def caught(request):
         'pika':new_pika,
         'profile':profile,
         })
+
+# STORE STUFF
+@login_required
+def store(request):
+    return  render(request, 'store/index.html')
+
+@login_required
+def success(request):
+    return  render(request, 'store/success.html')
+
+@login_required
+def cancel(request):
+    return  render(request, 'store/cancel.html')
