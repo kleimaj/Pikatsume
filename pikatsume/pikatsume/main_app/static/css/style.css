@@ -54,7 +54,8 @@ footer {
 /* =============== */
 #trash {
   position: relative;
-  left: 150px;
+  /* left: 150pxz; */
+  right: 175px;
   top: 150px;
 }
 
@@ -83,10 +84,9 @@ footer {
   flex-direction: column;
   height: 100vh;
 }
-
-/* .trashchu {
-
-} */
+.trashchu {
+  position: relative;
+}
 
 /* === LINKS  === */
 
