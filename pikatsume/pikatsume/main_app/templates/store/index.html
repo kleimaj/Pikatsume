@@ -2,57 +2,26 @@
 {% block content %}
 
 <div class="vh-container" id="store-container">
-  <h2 class="title is-2">Poffin Shop!</h2>
-        {% comment %} ONE POFFIN  {% endcomment %}
-        <div class="tile is-parent is-3">
-            <div class="tile is-child box">  
-                <img class="image" style="width: 100px; margin: 0 auto;" src="../../static/assets/images/one-poffin.png" alt="Poffin" />
-                <h4 class="title is-4">One (1) Poffin</h4>
-                <p class="content store-price">$1.00</p>
-                <button class="btn catch-btn" id="checkout-button-sku_GxvhBJjNakZ86U" role="link">Buy</button>
-            </div>
+    <h2 class="title is-2">Poffin Shop!</h2>
+    {% comment %} Modal ARE YOU SURE {% endcomment %}
+    <div class="popop-modal" id="purchase-conf">
+        <div class="popop-content section">
+            <h3 class="title is-3">Are you sure you want to purchase:</h3>
+            <img class="image" style="width: 100px; margin: 0 auto;" src="../../static/assets/images/one-poffin.png" alt="Poffin" />
+            <h4 class="title is-4">One (1) Poffin?</h4>
+            <button class="btn catch-btn" id="checkout-button-sku_GxvhBJjNakZ86U" role="link">Yes!</button>
+            <button class="btn catch-btn popop-close-btn" href="#" role="link">No.</button>
         </div>
-        {% comment %} FIVE POFFIN 
-        <div class="tile is-parent is-3">
-            <div class="tile is-child box">
-                <img class="image" src="../../static/assets/images/five-poffins.png" alt="Poffins" />
-                <h4 class="title is-4">Five (5) Poffins</h4>
-                <p class="content store-price">$4.00</p>
-                <button class="btn catch-btn id="checkout-button-sku_GxviqNiFrLVAGo" role="link" ">Buy</button>
-            </div>
-        </div> {% endcomment %}
+    </div>
+    {% comment %} ONE POFFIN  {% endcomment %}
+    <div class="tile is-parent is-3">
+        <div class="tile is-child box">  
+            <img class="image" style="width: 100px; margin: 0 auto;" src="../../static/assets/images/one-poffin.png" alt="Poffin" />
+            <h4 class="title is-4">One (1) Poffin</h4>
+            <p class="content store-price">$1.00</p>
+            <button class="btn catch-btn popop-open-btn" data-modal-id="purchase-conf" role="link">Buy</button>
+        </div>
     </div>
 </div>
-
-<script>
-(function() {
-  var stripe = Stripe('pk_test_s0vrPAXzQaeHLZyRcMfcE8so00552nja3O');
-
-  var checkoutButton = document.getElementById('checkout-button-sku_GxvhBJjNakZ86U');
-  checkoutButton.addEventListener('click', function () {
-    // When the customer clicks on the button, redirect
-    // them to Checkout.
-    stripe.redirectToCheckout({
-      items: [{sku: 'sku_GxvhBJjNakZ86U', quantity: 1}],
-
-      // Do not rely on the redirect to the successUrl for fulfilling
-      // purchases, customers may not always reach the success_url after
-      // a successful payment.
-      // Instead use one of the strategies described in
-      // https://stripe.com/docs/payments/checkout/fulfillment
-      successUrl: 'https://your-website.com/success',
-      cancelUrl: 'https://your-website.com/canceled',
-    })
-    .then(function (result) {
-      if (result.error) {
-        // If `redirectToCheckout` fails due to a browser or network
-        // error, display the localized error message to your customer.
-        var displayError = document.getElementById('error-message');
-        displayError.textContent = result.error.message;
-      }
-    });
-  });
-})();
-</script>
 
 {% endblock %}

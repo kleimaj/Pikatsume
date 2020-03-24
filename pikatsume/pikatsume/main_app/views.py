@@ -120,9 +120,12 @@ def caught(request):
 @login_required
 def store(request):
     return  render(request, 'store/index.html')
-
+    
+# POFFIN PURCHASE SUCCESS
 @login_required
 def success(request):
+    profile = Profile.objects.get(user=request.user)
+    profile.poffins += 1
     return  render(request, 'store/success.html')
 
 @login_required
