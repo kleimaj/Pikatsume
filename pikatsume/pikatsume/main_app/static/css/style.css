@@ -48,6 +48,17 @@ footer {
   padding-top: 0;
   text-align: right;
 }
+/* ======================== */
+/* === PIKABASE HOVER === */
+/* ======================== */
+.zoom {
+  padding: 50px;
+  transition: transform .2s;
+  margin: 0 auto;
+}
+.zoom:hover {
+  transform: scale(1.5); 
+}
 
 /* ======================== */
 /* === TRASH PIKA HOVER === */
@@ -111,6 +122,14 @@ div.pikabase-container{
 .trashchu {
   position: relative;
 }
+div#purchase-conf {
+  width: 500px;
+  height: 500px;
+}
+div#purchase-conf-section{
+  width: 100%;
+  height: 100%;
+}
 
 /* === LINKS  === */
 
@@ -161,6 +180,7 @@ a.profile-link:hover{
 .box img {
   width: 100%;
 }
+
 /* ===  FORMS/INPUT  === */
 
 input {
@@ -228,6 +248,9 @@ img.scale-img{
 /* === MEDIA QUERIES === */
 /* ===================== */
 @media only screen and (max-width: 600px) {
+  .btn {
+    font-size: 1.5rem;
+  }
   .mobile-label {
     display: inline;
   }
@@ -241,6 +264,9 @@ img.scale-img{
 
 }
 @media only screen and (max-width: 450px) {
+  .btn {
+    font-size: 1.5rem;
+  }
   h2.title.is-2 {
     font-size: 1.8em;
   }
