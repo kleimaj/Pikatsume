@@ -113,3 +113,18 @@ def caught(request):
         'pika':new_pika,
         'profile':profile,
         })
+
+# STORE STUFF
+@login_required
+def store(request):
+    return  render(request, 'store/index.html')
+# POFFIN PURCHASE SUCCESS
+@login_required
+def success(request):
+    profile = Profile.objects.get(user=request.user)
+    profile.poffins += 1
+    profile.save()
+    return  render(request, 'store/success.html')
+@login_required
+def cancel(request):
+    return  render(request, 'store/cancel.html')
