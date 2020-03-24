@@ -1,7 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 {% if dailyReward %}
-  <h2>Congrats, you've earned 10 poffins!</h2>
+  {% comment %} <h2>Congrats, you've earned 10 poffins!</h2> {% endcomment %}
+  <div class="popop-modal popup-show" id="div-poffin-reward">
+    <div class="popop-content has-text-centered">
+        <h3 class="title is-3">Congrats, you've earned 10 poffins!</h3>
+        <img class="image" style="width: 100px; margin: 0 auto;" src="../../static/assets/images/one-poffin.png" alt="Poffin" />
+    </div>
+    <div class="popop-content has-text-centered">
+        <button class="btn popop-close-btn" id="popup-close">Close</button>
+        </div>
+
+</div>
 {% endif %}
 <div class="container" id="pikabase-container">
   <h2 class="title is-2">The Pikabase!</h2>
@@ -16,4 +26,9 @@
     {% endfor %}
   </div>
 </div>
+<script> 
+document.querySelector('#popup-close').addEventListener('click',function(){
+  document.querySelector('#div-poffin-reward').style="display:none";
+})
+</script>
 {% endblock %}

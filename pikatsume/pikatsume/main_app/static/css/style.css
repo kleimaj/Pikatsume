@@ -48,6 +48,14 @@ footer {
   padding-top: 0;
   text-align: right;
 }
+#div-poffin-reward {
+  visibility: visible;
+  opacity: 1;
+  height: 50%;
+}
+/* #div-poffin-reward img { */
+  /* width: auto; */
+/* } */
 
 /* ======================== */
 /* === PIKABASE HOVER === */
