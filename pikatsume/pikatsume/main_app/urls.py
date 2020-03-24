@@ -18,4 +18,5 @@ urlpatterns = [
     path('store/', views.store, name='store'),
     path('store/success', views.success, name='success'),
     path('store/cancel', views.cancel, name='cancel'),
+    path('removepika/', views.remove_pika, name='removepika')
 ]

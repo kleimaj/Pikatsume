@@ -146,3 +146,7 @@ def success(request):
 @login_required
 def cancel(request):
     return  render(request, 'store/cancel.html')
+
+@login_required
+def remove_pika(request):
+    print("here!")
