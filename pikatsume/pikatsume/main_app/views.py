@@ -84,7 +84,7 @@ def delete_profile(request):
     request.user.delete()
     # Profile.objects.get(id=profile_id).delete()
     return redirect('logout')
-     
+
 # Catch (Game Logic Controllers)
 @login_required
 def catch(request):
