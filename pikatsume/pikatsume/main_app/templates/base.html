@@ -6,37 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>(o^.^o)Pikatsume!</title>
     <!-- CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Mouse+Memoirs|Inter:200,300,400,500,600,700,800,900&display=swap"" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Exo|Inter:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bulma.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/popop.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- JS -->
+    <script defer src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://js.stripe.com/v3"></script>
+    <script defer src="{% static 'js/interactions.js' %}"></script>
+    <script defer src="{% static 'js/popop.js' %}"></script>
+    <script defer src="{% static 'js/store.js' %}"></script>
+    <script defer src="{% static 'js/trash.js' %}"></script>
 </head>
   <body>
-      <header class="navbar-fixed">
-          <nav>
-            <div class="nav-wrapper">
-              <ul>
-                <li><a href="/" class="left brand-logo bold">Pikatsume!</a></li>
-              </ul>
-              <ul class="right">
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'index' %}">View the Pikabase</a></li>
-                {% if user.is_authenticated %}
-                  <li><a href="{% url 'new_pika' %}">Add a Pikachu</a></li>
-                  <li><a href="{% url 'logout' %}">Log Out</a></li>
-                {% else %}
-                  <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                  <li><a href="{% url 'login' %}">Log In</a></li>
-                {% endif %}
-               </ul>
+    <main>
+      <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <a role="button" class="navbar-burger animated" data-target="navMenu" aria-label="menu" aria-expanded="false">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <div class="navbar-menu animated" id="navMenu">
+            <div class="navbar-start">
+              <a class="navbar-item" href="{% url 'home'  %}"><i class="fas fa-2x fa-bolt"></i>
+                <span class="mobile-label">Home</span>
+              </a> 
+              <a class="navbar-item" href="{% url 'catch' %}">Catch A Pikachu!</a>
+              <a class="navbar-item" href="{% url 'index' %}">View the Pikabase</a>
+              {% if user.is_authenticated %}
+                <a class="navbar-item" href="{% url 'profile' %}">My Profile</a>
             </div>
-          </nav>
-      </header>
-      <main class="container">
-          {% block content %}
-          {% endblock %}
-      </main>
-      <footer>&copy; 2020 Pika Pika</footer>
+            <div class="navbar-end">
+                <a class="navbar-item" href="{% url 'store' %}"> 
+                  <i class="fas fa-2x fa-cookie"></i> 
+                  <span class="mobile-label">My Poffins:</span> {{ user.profile.poffins }}</a>
+                <a class="navbar-item" href="{% url 'logout' %}">Log Out</a>
+            </div>
+              {% else %}
+            </div>
+            <div class="navbar-end">
+                <a class="navbar-item" href="{% url 'signup' %}">Sign Up</a>
+                <a class="navbar-item" href="{% url 'login' %}">Log In</a>
+            </div>
+              {% endif %}
+          </div>
+    </nav>
+    <section class="section">
+        {% block content %}
+        {% endblock %}
+    </section>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p class="profile-link">&copy; 2020 team CH8TY</p>
+        <a class="profile-link" href="{% url 'about'%}">About Us</a>
+      </div>
+    </footer>
+  </main>
   </body>
 </html>

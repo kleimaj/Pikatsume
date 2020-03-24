@@ -1,10 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Profile</h1>
-    <h4>Hello, {{ user.username }}!</h4>
-    {% comment %} <form method="post">
-        {% csrf_token %}
-        {{ profile_form.as_p }}
-    <button type="submit">Save changes</button>
-</form> {% endcomment %}
+
+<div class="popop-modal" id="div-del-confirm">
+    <div class="popop-content has-text-centered">
+        <h3 class="title is-3">Are you sure you want to delete this Pikachu?</h3>
+        <button class="btn popop-close-btn" id="trash-this-chu">Yes :(</button>
+        <button class="btn popop-close-btn">No</button>
+    </div>
+</div>
+<div class="container" id="profile-container">
+    <h1 class="title is-1">Hello, {{ user.profile.name }}! </h1>
+    <a href="{% url 'profile_form'%}" class="profile-link">Edit My Profile</a>
+    
+    <h3 class="title is-3">My Poffins:
+        <span class="poffin-count">{{ user.profile.poffins }}</span></p>
+    </h3>
+    <a href="{% url 'store' %}" class="profile-link">Buy More Poffins</a>
+    
+    <h3 class="title is-3">My Pikachus</h3>
+     <a href="{% url 'catch'%}" class="profile-link">Catch More Pikachus</a>
+   
+    <div class="tile is-ancestor my-pikas">
+    {% comment %} {{user.profile.pikachu.all}} {% endcomment %}
+    {% for pika in user.profile.pikachu.all %}
+        <div class="tile is-parent is-3 trashchu" index="{{forloop.counter0}}">
+            <div class="tile is-child delete-trash popop-open-btn" index="{{forloop.counter0}}" data-modal-id="div-del-confirm">
+            <i class="fas fa-trash-alt fa-7x" id="trashbin"></i>
+            </div>
+            <div class="tile is-child box pikabase-container">
+                <h4 class="title is-4">{{pika.name}}</h4>
+                <img src="{{pika.pic}}">
+            </div>
+        </div>
+    {% endfor %}
+   
+</div>
 {% endblock %}

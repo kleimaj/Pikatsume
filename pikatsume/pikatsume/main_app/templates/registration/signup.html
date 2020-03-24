@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<h1>Sign Up</h1>
-<form method="post" action="{% url 'signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" class="btn" value="signup">
-</form>
-
+<div class="container" id="signup-container">
+  <h1 class="title is-1">Sign Up</h1>
+  <p class="subtitle">You're one step away from starting your Pikachu collection!</p>
+  <form method="post" action="{% url 'signup' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+    <button type="submit" class="btn">Submit!</button>
+  </form>
+  <h3 class="title is-3">Have an account?</h3>
+  <a class="btn" href="{% url 'login' %}">Log In!</a>
+</div>
 {% endblock %}

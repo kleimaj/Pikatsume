@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container" id="profile-container">
+
+    <h1 class="title is-1">  Edit {{ user.username }} Profile </h1>
+    <div class="">
+     <form  method="POST" class="artist-form">
+            {% csrf_token %}
+            {{profile_form.as_p}}
+            <button class="btn" type="submit">Save</button>
+        </form>
+    <p>
+        <a href="{% url 'delete_profile' %}">Do you want to Delete</a>
+    </p>
+    </div>
+    <a class="profile-link" href="{% url 'profile' %}">Back to Profile</a>
+    
+
+</div>
+{% endblock %}

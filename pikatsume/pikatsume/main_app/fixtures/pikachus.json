@@ -1,0 +1,119 @@
+[
+    {
+        "model" : "main_app.pika",
+        "pk" : "1",
+        "fields" : {
+            "name" : "All Might Chu",
+            "pic" : "https://i.ibb.co/D4JjDr3/all-might-chu.jpg",
+            "User" : "cat"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "2",
+        "fields" : {
+            "name" : "Classic Chonk Chu",
+            "pic" : "https://i.ibb.co/3FJVrj2/classic-chonk-chu.png",
+            "User" : "cat"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "3",
+        "fields" : {
+            "name" : "Eggachu",
+            "pic" : "https://i.ibb.co/thsq0KD/eggachu.png",
+            "User" : "cat"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "4",
+        "fields" : {
+            "name" : "Pokeman",
+            "pic" : "https://i.ibb.co/2kTZvBh/pokeman.jpg",
+            "User" : "None"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "5",
+        "fields" : {
+            "name" : "Sad Ketchup Chu",
+            "pic" : "https://i.ibb.co/GWnR6Ck/sad-ketchup-chu.jpg",
+            "User" : "None"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "6",
+        "fields" : {
+            "name" : "Upsetti Detective Pikachu",
+            "pic" : "https://i.ibb.co/vdtqnDx/solo-upsetti-chu-bg.png",
+            "User" : "None"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "7",
+        "fields" : {
+            "name" : "Panic Chu",
+            "pic" : "https://i.ibb.co/JrNCQVB/thatsnotgoodpika.jpg",
+            "User" : "None"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "8",
+        "fields" : {
+            "name" : "Dancing Detective Pikachu",
+            "pic" : "https://i.ibb.co/71KgrbK/dancingdetchu.gif",
+            "User" : "None"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "9",
+        "fields" : {
+            "name" : "Dittochu",
+            "pic" : "https://i.ibb.co/HTcCm5J/dittochu.jpg",
+            "User" : "None"
+        }
+    },
+    {
+        "model" : "main_app.pikachu",
+        "pk" : "10",
+        "fields" : {
+            "name" : "Gigantamax Pikachu",
+            "pic" : "https://i.ibb.co/TRr1Snt/gigantamax.jpg",
+            "User" : "None"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "11",
+        "fields" : {
+            "name" : "Pikachu Libre",
+            "pic" : "https://i.ibb.co/WsDmWcn/pikalibre.png",
+            "User" : "None"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "12",
+        "fields" : {
+            "name" : "Stretchy-face Pika",
+            "pic" : "https://i.ibb.co/71xWTRd/stretch-face-pika.gif",
+            "User" : "None"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "13",
+        "fields" : {
+            "name" : "Surprised Pikachu",
+            "pic" : "https://i.ibb.co/z4gw8jd/surprisedpika.jpg",
+            "User" : "None"
+        }
+    }
+]

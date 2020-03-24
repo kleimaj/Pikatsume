@@ -1,34 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h2>The Pikabase!</h2>
-  <div class="row">
-    {% for pika in pikas %}
-    <div class="col s5 m5 l5">
-
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-        <img class="responsive-img" src="{{ pika.pic_url }}" alt="A Pikachu">
-      </div>
-      <div class="card-content">
-        <h4>{{ pika.name }}</h4>
-        {% for origin in pika.origin_set.all %}
-          <p><span class="bold">Origin:</span> {{ origin.get_origin_display }}</p> 
-        {% endfor %}
-        <p><span class="bold">Type:</span>
-          <ul class="pika-list">
-            {% for pika in pika.pika_type.all %}      
-              <li>
-                <span>
-                  <i class="fas fa-bolt"></i>
-                </span> {{ pika.pika_type }}
-              </li>
-            {% endfor %}
-          </ul>
-        </p>
-      </div>
+{% if dailyReward %}
+  {% comment %} <h2>Congrats, you've earned 10 poffins!</h2> {% endcomment %}
+  <div class="popop-modal popup-show" id="div-poffin-reward">
+    <div class="popop-content has-text-centered">
+        <h3 class="title is-3">Congrats, you've earned 10 poffins!</h3>
+        <img class="image" style="width: 100px; margin: 0 auto;" src="../../static/assets/images/one-poffin.png" alt="Poffin" />
+        <button class="btn popop-close-btn" id="popup-close">Close</button>
     </div>
+
+</div>
+{% endif %}
+<div class="container" id="pikabase-container">
+  <h2 class="title is-2">The Pikabase!</h2>
+  <div class="tile is-ancestor">
+    {% for pika in pikas %}
+     <div class="tile is-parent is-3 zoom">
+        <div class="tile is-child box pikabase-container">
+          <h4 class="title is-4">{{ pika.name }}</h4>
+          <img src="{{ pika.pic }}" alt="A Pikachu">
+        </div>
+      </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-  </div>
-  <!-- Add Pika Form -->
+</div>
+<script> 
+document.querySelector('#popup-close').addEventListener('click',function(){
+  document.querySelector('#div-poffin-reward').style="display:none";
+})
+</script>
 {% endblock %}

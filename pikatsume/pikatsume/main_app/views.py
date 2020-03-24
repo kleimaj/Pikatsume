@@ -6,8 +6,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from django.dispatch import receiver
-from .models import Pika, Ptype, Profile
-from .forms import PikaForm
+from .models import Pika, Profile
+from .forms import PikaForm, ProfileForm
+from datetime import datetime, timezone
 # Create your views here.
 
 def signup(request):
@@ -16,7 +17,9 @@ def signup(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
+            # profile = Profile()
             login(request, user)
+            # Create default profile
             return redirect('profile')
         else:
             error_message = 'Invalid sign up - try again'
@@ -31,14 +34,53 @@ def about(request):
     return  render(request, 'about.html')
 
 def pikabase_index(request):
+    user = request.user
+    profile = Profile.objects.get(user=user)
+    
+    lastTime = profile.loginTime
+    newTime = datetime.now(timezone.utc)
+    difference = newTime - lastTime
+    
+    if (difference.seconds >= 60):
+        print(difference.days)
+        # Increment poffins by 10
+        profile.poffins += 10
+        # change loginTime to now in Profile
+        profile.loginTime = newTime
+        profile.save()
+        # send dailyReward
+        dailyReward = 1
+    else:
+        dailyReward = 0
+        # print("not greater than a day")
+    # print("seconds: ",difference.seconds)
+    
     pikas = Pika.objects.all()
-    return  render(request, 'pikabase/index.html', { 'pikas': pikas })
+    return  render(request, 'pikabase/index.html', { 'pikas': pikas, 'dailyReward': dailyReward })
 
 @login_required
 def profile(request):
-    return render(request, 'accounts/profile')
+    return render(request, 'accounts/profile.html')
 
 @login_required
+@transaction.atomic
+def profile_edit(request):
+    # form = ProfileForm(request.POST, instance=profile)
+    # return render(request, 'accounts/profile_form.html', {'form':form})
+    if request.method == 'POST':
+        profile_form = ProfileForm(request.POST, instance=request.user.profile)
+        if profile_form.is_valid():
+            profile_form.save()
+            new_name = Profile.objects.get(user=request.user).name
+            request.user.username = new_name
+            request.user.save()
+            return redirect('profile')
+    else:
+        profile_form = ProfileForm(instance=request.user.profile)
+        return render(request, 'accounts/profile_form.html', {'profile_form': profile_form})
+
+@login_required
+@transaction.atomic
 def new_pika(request):
     if request.method == 'POST':
         new_form = PikaForm(request.POST)
@@ -53,13 +95,58 @@ def new_pika(request):
         return render(request, 'pikabase/pika_form.html', context)
 
 @login_required
-@transaction.atomic
-def update_profile(request):
-    if request.method == 'POST':
-        profile_form = ProfileForm(request.POST, instance=request.user.profile)
-        if profile_form.is_valid():
-            profile_form.save()
-            return redirect('profile.html')
-    else:
-        profile_form = ProfileForm(instance=request.user.profile)
-        return render(request, 'profile.html', {'profile_form': profile_form})
+def delete_profile(request):
+    # user = User.objects.get(username = request.user)
+    # print(request.user.username)
+    # profile.delete()
+    request.user.delete()
+    # Profile.objects.get(id=profile_id).delete()
+    return redirect('logout')
+     
+# Catch (Game Logic Controllers)
+@login_required
+def catch(request):
+    return render(request, 'catch/catch.html')
+@login_required
+def catch_confirm(request):
+    # user = request.user
+    # print(user)
+    # profile = user.profile
+    profile = Profile.objects.get(user=request.user)
+    profile.poffins = int(profile.poffins)
+    return render(request, 'catch/catch_confirm.html', {'profile':profile})
+@login_required
+def caught(request):
+    # get this user's profile
+    profile = Profile.objects.get(user=request.user)
+    print(profile.poffins)
+    print(profile.pikachu)
+    # decrement poffins by 5
+    profile.poffins -= 5
+    new_pika = Pika.objects.order_by("?").first()
+    profile.pikachu.add(new_pika.id)
+    profile.save()
+    # print(profile.pikachu.all())
+    return render(request, 'catch/caught.html', {
+        'pika':new_pika,
+        'profile':profile,
+        })
+        
+# STORE STUFF
+@login_required
+def store(request):
+    return  render(request, 'store/index.html')
+# POFFIN PURCHASE SUCCESS
+@login_required
+def success(request):
+    profile = Profile.objects.get(user=request.user)
+    profile.poffins += 1
+    profile.save()
+    return  render(request, 'store/success.html')
+@login_required
+def cancel(request):
+    return  render(request, 'store/cancel.html')
+
+@login_required
+def remove_pika(request):
+    print("here!")

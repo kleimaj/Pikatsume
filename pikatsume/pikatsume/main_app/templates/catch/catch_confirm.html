@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="columns is-centered">
+    <div class="column is-half vh-container" id="catch-container">
+        <img class="pikaball animated shake" src="../../static/assets/images/pikaball.png" alt="pokeball" />
+        <br />
+    {% if profile.poffins > 5 %}
+        <h2 class="title is-3">You currently have {{profile.poffins}} Poffins!</h2>
+        <a class="btn catch-btn" href="{% url 'caught' %}" >Catch a Pikachu<br /> (5 Poffins)</a>
+    {% else %}
+        {% if profile.poffins is 1 %}
+         <h3 class="title is-3">You currently have {{profile.poffins}} Poffin!</h3>
+        {% else %}
+        <h3 class="title is-3">You currently have {{profile.poffins}} Poffins!</h3>
+        {% endif %}
+        <h2 class="title is-2">You don't have enough Poffins!!</h2>
+    {% endif %}
+       <a class="btn catch-btn" href="{% url 'store' %}">Buy More Poffins</button></a>
+    </div>
+</div>
+
+{% endblock %}

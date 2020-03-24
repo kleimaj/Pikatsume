@@ -1,0 +1,163 @@
+
+[
+    {
+        "model" : "main_app.pika",
+        "pk" : "1",
+        "fields" : {
+            "name" : "All Might Chu",
+            "pic" : "https://i.ibb.co/D4JjDr3/all-might-chu.jpg"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "2",
+        "fields" : {
+            "name" : "Classic Chonk Chu",
+            "pic" : "https://i.ibb.co/3FJVrj2/classic-chonk-chu.png"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "3",
+        "fields" : {
+            "name" : "Eggachu",
+            "pic" : "https://i.ibb.co/thsq0KD/eggachu.png"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "4",
+        "fields" : {
+            "name" : "Pokeman",
+            "pic" : "https://i.ibb.co/2kTZvBh/pokeman.jpg"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "5",
+        "fields" : {
+            "name" : "Sad Ketchup Chu",
+            "pic" : "https://i.ibb.co/GWnR6Ck/sad-ketchup-chu.jpg"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "6",
+        "fields" : {
+            "name" : "Upsetti Detective Pikachu",
+            "pic" : "https://i.ibb.co/vdtqnDx/solo-upsetti-chu-bg.png"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "7",
+        "fields" : {
+            "name" : "Panic Chu",
+            "pic" : "https://i.ibb.co/JrNCQVB/thatsnotgoodpika.jpg"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "8",
+        "fields" : {
+            "name" : "Dancing Detective Pikachu",
+            "pic" : "https://i.ibb.co/71KgrbK/dancingdetchu.gif"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "9",
+        "fields" : {
+            "name" : "Dittochu",
+            "pic" : "https://i.ibb.co/HTcCm5J/dittochu.jpg"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "10",
+        "fields" : {
+            "name" : "Gigantamax Pikachu",
+            "pic" : "https://i.ibb.co/TRr1Snt/gigantamax.jpg"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "11",
+        "fields" : {
+            "name" : "Pikachu Libre",
+            "pic" : "https://i.ibb.co/WsDmWcn/pikalibre.png"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "12",
+        "fields" : {
+            "name" : "Stretchy-face Pika",
+            "pic" : "https://i.ibb.co/71xWTRd/stretch-face-pika.gif"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "13",
+        "fields" : {
+            "name" : "Surprised Pikachu",
+            "pic" : "https://i.ibb.co/z4gw8jd/surprisedpika.jpg"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "14",
+        "fields" : {
+            "name" : "Cool",
+            "pic" : "https://i.ibb.co/XSBHnDF/cool-chu.png"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "15",
+        "fields" : {
+            "name" : "Sleepychu",
+            "pic" : "https://i.ibb.co/SwtLzPn/sleep-chu.jpg"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "16",
+        "fields" : {
+            "name" : "Basschu",
+            "pic" : "https://i.ibb.co/fCNpndG/bass-chu.png"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "17",
+        "fields" : {
+            "name" : "Pika Juice",
+            "pic" : "https://i.ibb.co/Chw0BZR/pikajuice.png"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "18",
+        "fields" : {
+            "name" : "Deflated Chu",
+            "pic" : "https://i.ibb.co/NZx6Q0P/giphy.gif"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "19",
+        "fields" : {
+            "name" : "Plzkachu",
+            "pic" : "https://i.ibb.co/rsGTBQ6/plzkachu.gif"
+        }
+    },
+    {
+        "model" : "main_app.pika",
+        "pk" : "20",
+        "fields" : {
+            "name" : "Pikanetta",
+            "pic" : "https://i.ibb.co/BTPJ1fJ/pikanetta.gif"
+        }
+    }
+]

@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import Ptype, Pika, Origin
+from .models import Pika, Profile
 # Register your models here.
 
-admin.site.register(Ptype)
 admin.site.register(Pika)
-admin.site.register(Origin)
+admin.site.register(Profile)

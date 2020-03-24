@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'main_app',
+    'stripe',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -67,6 +68,19 @@ TEMPLATES = [
         },
     },
 ]
+
+# STRIPE API
+STRIPE_LIVE_PUBLIC_KEY = os.environ.get("STRIPE_LIVE_PUBLIC_KEY", "pk_test_s0vrPAXzQaeHLZyRcMfcE8so00552nja3O")
+STRIPE_LIVE_SECRET_KEY = os.environ.get("STRIPE_LIVE_SECRET_KEY", "sk_test_K9MiK6jDypLjjdVo2cawRCA600oNOLrhST")
+STRIPE_TEST_PUBLIC_KEY = os.environ.get("STRIPE_TEST_PUBLIC_KEY", "pk_test_s0vrPAXzQaeHLZyRcMfcE8so00552nja3O")
+STRIPE_TEST_SECRET_KEY = os.environ.get("STRIPE_TEST_SECRET_KEY", "sk_test_K9MiK6jDypLjjdVo2cawRCA600oNOLrhST")
+STRIPE_LIVE_MODE = False  # Change to True in production
+BASE_PRICE=100
+CURRENCY='usd'
+PAYMENT_METHODS='card'
+# Get it from the section in the Stripe dashboard where you added the webhook endpoint
+
+####
 
 WSGI_APPLICATION = 'pikatsume.wsgi.application'
 
@@ -119,5 +133,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 LOGIN_REDIRECT_URL = '/pikabase/'
 LOGOUT_REDIRECT_URL = '/'
+
+

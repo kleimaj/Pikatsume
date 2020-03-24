@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="vh-container" id="store-container">
+    <h2 class="title is-2">Poffin Shop!</h2>
+    {% comment %} <p style="text-transform: uppercase;color: goldenrod;/* font-weight: 900; */text-align: justify;"> We not only believe that you will feel statisfied with catching more Pika but it could be more satisfying feeding someone in need. For every 3  purchases of poffins you buy we will donate a loaf of poffins(bread) to your local shelter. We will base the shelter location with the zip code you provide us. Thank you! Pika Pika!</p> {% endcomment %}
+    <div class="popop-modal popop-confirm" id="purchase-conf">
+        <div class="popop-content section">
+            <h3 class="title is-3">Are you sure you want to purchase:</h3>
+            <img class="image" style="width: 100px; margin: 0 auto;" src="../../static/assets/images/one-poffin.png" alt="Poffin" />
+            <h4 class="title is-4">One (1) Poffin?</h4>
+            <button class="btn catch-btn" id="checkout-button-sku_GxvhBJjNakZ86U" role="link">Yes!</button>
+            <button class="btn catch-btn popop-close-btn" href="#" role="link">No.</button>
+        </div>
+    </div>
+    {% comment %} ONE POFFIN  {% endcomment %}
+    <div class="tile is-parent is-3">
+        <div class="tile is-child box">  
+            <img class="image" style="width: 100px; margin: 0 auto;" src="../../static/assets/images/one-poffin.png" alt="Poffin" />
+            <h4 class="title is-4">One (1) Poffin</h4>
+            <p class="content store-price">$1.00</p>
+            <button class="btn catch-btn popop-open-btn" data-modal-id="purchase-conf" role="link">Buy</button>
+        </div>
+    </div>
+    <section class="section">
+        <a class="btn catch-btn" href="{% url 'catch' %}">Go Back</a>
+    </section>
+</div>
+
+{% endblock %}
