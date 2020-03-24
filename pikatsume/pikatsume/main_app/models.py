@@ -15,7 +15,7 @@ class Pika(models.Model):
 
 class Profile(models.Model):        
     name = models.CharField(max_length=255)
-    loginTime = models.CharField(max_length=255)
+    loginTime = models.DateField()
         
     poffins = models.IntegerField()
     
