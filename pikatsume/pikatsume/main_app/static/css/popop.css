@@ -25,6 +25,7 @@
 }
 .popop-confirm{
     contain: content;
+    height: 100%;
 }
 .popop-content{
     overflow: auto;
