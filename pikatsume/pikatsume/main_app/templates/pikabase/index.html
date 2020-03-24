@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
+{% if dailyReward %}
+  <h2>Congrats, you've earned 10 poffins!</h2>
+{% endif %}
 <div class="container" id="pikabase-container">
   <h2 class="title is-2">The Pikabase!</h2>
   <div class="tile is-ancestor">

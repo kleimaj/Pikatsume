@@ -4,7 +4,8 @@ from datetime import date
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-
+import os, time
+import datetime
 
 class Pika(models.Model):
     name = models.CharField(max_length=255)
@@ -15,7 +16,8 @@ class Pika(models.Model):
 
 class Profile(models.Model):        
     name = models.CharField(max_length=255)
-    loginTime = models.CharField(max_length=255)
+    # loginTime = models.CharField(max_length=255)
+    loginTime = models.DateTimeField()
         
     poffins = models.IntegerField()
     
@@ -32,7 +34,11 @@ def create_user_profile(sender, instance, created, **kwargs):
         # print(instance)
         # print(instance.user)
         # print(instance.username)
-        Profile.objects.create(user=instance, poffins=30, name=instance.username)
+        # userLoginTime = time.strftime('%X %x %Z')
+        # print(userLoginTime)
+        userLoginTime = datetime.datetime.now()
+        
+        Profile.objects.create(user=instance, loginTime=userLoginTime, poffins=30, name=instance.username)
     
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
