@@ -1,8 +1,7 @@
 console.log('i am the trash man');
-let pikas = $('.trashchu');
-// const trash = `<i class="fas fa-trash-alt"></i>`
-let currentCard = '';
-
+let pikas = $('.delete_trash');
 for (p of pikas) {
-    
+    p.click(function() {
+        console.log("Here");
+    }
 }
