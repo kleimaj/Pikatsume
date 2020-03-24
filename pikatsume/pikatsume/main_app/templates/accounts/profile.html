@@ -17,6 +17,9 @@
     {% comment %} {{user.profile.pikachu.all}} {% endcomment %}
     {% for pika in user.profile.pikachu.all %}
         <div class="tile is-parent is-3 trashchu">
+            <div class="tile is-child delete-trash">
+                <i class="fas fa-trash-alt fa-7x"></i>
+            </div>
             <div class="tile is-child box pikabase-container">
                 <h4 class="title is-4">{{pika.name}}</h4>
                 <img src="{{pika.pic}}">
