@@ -17,7 +17,7 @@ USER STORY
 <h1>Technologies Used:</h1>
 HTML, CSS, Javascript, Bulma, Django, Python3
 
-![ERD](//project-Pikatsume/ERD.png)
+![ERD](project-Pikatsume/ERD.png)
 
 <h1> Stripe as a stretch </h1>
 Offer donators free plush pika
