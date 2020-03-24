@@ -126,6 +126,7 @@ def store(request):
 def success(request):
     profile = Profile.objects.get(user=request.user)
     profile.poffins += 1
+    profile.save()
     return  render(request, 'store/success.html')
 
 @login_required
