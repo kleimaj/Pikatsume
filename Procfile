@@ -1,1 +1,1 @@
-web: gunicorn pikatsume.wsgi
+web: gunicorn pikatsume.pikatsume.wsgi
