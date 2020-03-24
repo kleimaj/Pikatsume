@@ -8,6 +8,7 @@ from django.db import transaction
 from django.dispatch import receiver
 from .models import Pika, Profile
 from .forms import PikaForm, ProfileForm
+from datetime import datetime, timezone
 # Create your views here.
 
 def signup(request):
@@ -40,7 +41,7 @@ def pikabase_index(request):
     newTime = datetime.now(timezone.utc)
     difference = newTime - lastTime
     
-    if (difference.seconds >= 60):
+    if (difference.seconds >= 1):
         print(difference.days)
         # Increment poffins by 10
         profile.poffins += 10
@@ -130,3 +131,18 @@ def caught(request):
         'pika':new_pika,
         'profile':profile,
         })
+
+# STORE STUFF
+@login_required
+def store(request):
+    return  render(request, 'store/index.html')
+# POFFIN PURCHASE SUCCESS
+@login_required
+def success(request):
+    profile = Profile.objects.get(user=request.user)
+    profile.poffins += 1
+    profile.save()
+    return  render(request, 'store/success.html')
+@login_required
+def cancel(request):
+    return  render(request, 'store/cancel.html')
