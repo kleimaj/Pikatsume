@@ -14,5 +14,8 @@ urlpatterns = [
     path('catch/', views.catch, name='catch'),
     path('catch/confirm', views.catch_confirm, name='catch_confirm'),
     path('caught/', views.caught, name='caught'),
-    path('profile/delete', views.delete_profile, name='delete_profile')
+    path('profile/delete', views.delete_profile, name='delete_profile'),
+    path('store/', views.store, name='store'),
+    path('store/success', views.success, name='success'),
+    path('store/cancel', views.cancel, name='cancel'),
 ]
