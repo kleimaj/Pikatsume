@@ -11,13 +11,14 @@ USER STORY
 - User can remove a Pikachu from their collection
 - User can update their password, username, or delete their account
 
-![Wireframe](project-Pikatsume/app_demo.png)
+![Wireframe](https://git.generalassemb.ly/Johnson/project-Pikatsume/blob/submaster/app_demo.png)
 
 
 <h1>Technologies Used:</h1>
 HTML, CSS, Javascript, Bulma, Django, Python3
 
-![ERD](//project-Pikatsume/ERD.png)
+![ERD](https://git.generalassemb.ly/Johnson/project-Pikatsume/blob/submaster/ERD.png)
 
-<h1> Stripe as a stretch </h1>
+<h1> Stretch </h1>
+Use Stripe collect purchases of poffins 
 Offer donators free plush pika
