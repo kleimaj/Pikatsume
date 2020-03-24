@@ -11,4 +11,4 @@ USER STORY
 - User can remove a Pikachu from their collection
 - User can update their password, username, or delete their account
 
-![Wireframe](project-Pikatsume/app_demo.png)
+![Wireframe](//project-Pikatsume/app_demo.png)
