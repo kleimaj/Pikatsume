@@ -8,9 +8,6 @@ from django.db import transaction
 from django.dispatch import receiver
 from .models import Pika, Profile
 from .forms import PikaForm, ProfileForm
-import os, time
-from datetime import datetime, timezone
-
 # Create your views here.
 
 def signup(request):
@@ -21,26 +18,6 @@ def signup(request):
             user = form.save()
             # profile = Profile()
             login(request, user)
-            #time log 
-            # userLoginTime = time.strftime('%X %x %Z')
-            # profile = Profile.objects.get(user=user)
-            # print(profile,"~~~~~~~")
-            # #  datetime.strptime
-            # print(profile.loginTime,"~~~ ~ ~ ~")
-            # print(type(profile.loginTime))
-            # lastTime = profile.loginTime
-
-            # newTime = datetime.now(timezone.utc)
-            # difference = newTime - lastTime
-            # print(difference)
-            # print(difference.days)
-            # if (difference.days >= 1):
-            #     print(difference.days)
-            # else:
-            #     print("not greater than a day")
-            # print("seconds: ",difference.seconds)
-            # if (difference.seconds)
-            # print(userLoginTime)
             # Create default profile
             return redirect('profile')
         else:
@@ -48,9 +25,7 @@ def signup(request):
     form = UserCreationForm()
     context = { 'form' : form, 'error_message' : error_message }
     return render(request, 'registration/signup.html', context)
-# def loginCounter(request):
-   
-        
+
 def home(request):
     return render(request, 'home.html')
 
@@ -80,9 +55,7 @@ def pikabase_index(request):
     # print("seconds: ",difference.seconds)
     
     pikas = Pika.objects.all()
-    return  render(request, 'pikabase/index.html', { 
-        'pikas': pikas,
-        'dailyReward': dailyReward })
+    return  render(request, 'pikabase/index.html', { 'pikas': pikas })
 
 @login_required
 def profile(request):
@@ -128,12 +101,11 @@ def delete_profile(request):
     request.user.delete()
     # Profile.objects.get(id=profile_id).delete()
     return redirect('logout')
-
+     
 # Catch (Game Logic Controllers)
 @login_required
 def catch(request):
     return render(request, 'catch/catch.html')
-    
 @login_required
 def catch_confirm(request):
     # user = request.user
@@ -142,7 +114,6 @@ def catch_confirm(request):
     profile = Profile.objects.get(user=request.user)
     profile.poffins = int(profile.poffins)
     return render(request, 'catch/catch_confirm.html', {'profile':profile})
-
 @login_required
 def caught(request):
     # get this user's profile
@@ -159,20 +130,3 @@ def caught(request):
         'pika':new_pika,
         'profile':profile,
         })
-
-# STORE STUFF
-@login_required
-def store(request):
-    return  render(request, 'store/index.html')
-    
-# POFFIN PURCHASE SUCCESS
-@login_required
-def success(request):
-    profile = Profile.objects.get(user=request.user)
-    profile.poffins += 1
-    profile.save()
-    return  render(request, 'store/success.html')
-
-@login_required
-def cancel(request):
-    return  render(request, 'store/cancel.html')
