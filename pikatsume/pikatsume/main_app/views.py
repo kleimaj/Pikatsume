@@ -8,6 +8,7 @@ from django.db import transaction
 from django.dispatch import receiver
 from .models import Pika, Profile
 from .forms import PikaForm, ProfileForm
+from datetime import datetime, timezone
 # Create your views here.
 
 def signup(request):
@@ -33,15 +34,32 @@ def about(request):
     return  render(request, 'about.html')
 
 def pikabase_index(request):
+    user = request.user
+    profile = Profile.objects.get(user=user)
+    
+    lastTime = profile.loginTime
+    newTime = datetime.now(timezone.utc)
+    difference = newTime - lastTime
+    
+    if (difference.seconds >= 1):
+        print(difference.days)
+        # Increment poffins by 10
+        profile.poffins += 10
+        # change loginTime to now in Profile
+        profile.loginTime = newTime
+        profile.save()
+        # send dailyReward
+        dailyReward = 1
+    else:
+        dailyReward = 0
+        # print("not greater than a day")
+    # print("seconds: ",difference.seconds)
+    
     pikas = Pika.objects.all()
     return  render(request, 'pikabase/index.html', { 'pikas': pikas })
 
 @login_required
 def profile(request):
-    # profile = Profile(name=request.user, poffins=30)
-    # print(profile)
-    # profile.save()
-    # print("profile saved~~~~~~~")
     return render(request, 'accounts/profile.html')
 
 @login_required
