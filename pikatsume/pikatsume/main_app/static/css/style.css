@@ -50,6 +50,15 @@ footer {
 }
 
 /* =============== */
+/* ==== ICONS ==== */
+/* =============== */
+#trash {
+  position: relative;
+  left: 150px;
+  top: 150px;
+}
+
+/* =============== */
 /* == ANIMATION == */
 /* =============== */
 
@@ -74,6 +83,10 @@ footer {
   flex-direction: column;
   height: 100vh;
 }
+
+/* .trashchu {
+
+} */
 
 /* === LINKS  === */
 

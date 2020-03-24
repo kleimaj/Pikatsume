@@ -2,9 +2,8 @@
 {% block content %}
 <div class="container" id="profile-container">
 
-    <h1 class="title is-1">Hello,  {{ user.username }}! </h1>
-
-    <a href="{% url 'profile_form' %}" class="profile-link">Edit My Profile</a>
+    <h1 class="title is-1">Hello,  {{ user.profile.name }}! </h1>
+    <a href="{% url 'profile_form'%}" class="profile-link">Edit My Profile</a>
     
     <h3 class="title is-3">My Poffins: 
         <span class="poffin-count">{{ user.profile.poffins }}</span></p>
@@ -17,7 +16,7 @@
     <div class="tile is-ancestor my-pikas">
     {% comment %} {{user.profile.pikachu.all}} {% endcomment %}
     {% for pika in user.profile.pikachu.all %}
-        <div class="tile is-parent is-3">
+        <div class="tile is-parent is-3 trashchu">
             <div class="tile is-child box pikabase-container">
                 <h4 class="title is-4">{{pika.name}}</h4>
                 <img src="{{pika.pic}}">
@@ -26,5 +25,4 @@
     {% endfor %}
    
 </div>
-
 {% endblock %}

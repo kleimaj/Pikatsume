@@ -45,10 +45,24 @@ def profile(request):
     return render(request, 'accounts/profile.html')
 
 @login_required
+@transaction.atomic
 def profile_edit(request):
-    return render(request, 'accounts/profile_form.html')
+    # form = ProfileForm(request.POST, instance=profile)
+    # return render(request, 'accounts/profile_form.html', {'form':form})
+    if request.method == 'POST':
+        profile_form = ProfileForm(request.POST, instance=request.user.profile)
+        if profile_form.is_valid():
+            profile_form.save()
+            new_name = Profile.objects.get(user=request.user).name
+            request.user.username = new_name
+            request.user.save()
+            return redirect('profile')
+    else:
+        profile_form = ProfileForm(instance=request.user.profile)
+        return render(request, 'accounts/profile_form.html', {'profile_form': profile_form})
 
 @login_required
+@transaction.atomic
 def new_pika(request):
     if request.method == 'POST':
         new_form = PikaForm(request.POST)
@@ -63,20 +77,13 @@ def new_pika(request):
         return render(request, 'pikabase/pika_form.html', context)
 
 @login_required
-@transaction.atomic
-def update_profile(request):
-    if request.method == 'POST':
-        profile_form = ProfileForm(request.POST, instance=request.user.profile)
-        if profile_form.is_valid():
-            profile_form.save()
-            return redirect('profile')
-    else:
-        profile_form = ProfileForm(instance=request.user.profile)
-        return render(request, 'profile_form.html', {'profile_form': profile_form})
-
-def delete_profile(request, car_id):
-    Profile.objects.get(id=profile_id).delete()
-    return redirect('index') 
+def delete_profile(request):
+    # user = User.objects.get(username = request.user)
+    # print(request.user.username)
+    # profile.delete()
+    request.user.delete()
+    # Profile.objects.get(id=profile_id).delete()
+    return redirect('logout')
      
 # Catch (Game Logic Controllers)
 @login_required
@@ -103,7 +110,7 @@ def caught(request):
     new_pika = Pika.objects.order_by("?").first()
     profile.pikachu.add(new_pika.id)
     profile.save()
-    print(profile.pikachu.all())
+    # print(profile.pikachu.all())
     return render(request, 'catch/caught.html', {
         'pika':new_pika,
         'profile':profile,
