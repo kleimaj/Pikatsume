@@ -49,15 +49,10 @@ footer {
   text-align: right;
 }
 
-/* =============== */
-/* ==== ICONS ==== */
-/* =============== */
-#trash {
-  position: relative;
-  /* left: 150pxz; */
-  right: 175px;
-  top: 150px;
-}
+/* ======================== */
+/* === TRASH PIKA HOVER === */
+/* ======================== */
+
 div.delete-trash{
   z-index: 9;
   position: absolute;
@@ -75,10 +70,13 @@ div.delete-trash:hover{
   opacity: 1;
 }
 
-.svg-inline--fa{
+#trashbin.svg-inline--fa{
   color: crimson;
   display: block;
-  margin:  auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px; 
+  padding: 0;
 }
 
 div.pikabase-container{
