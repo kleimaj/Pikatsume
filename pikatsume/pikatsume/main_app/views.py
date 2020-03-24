@@ -122,7 +122,7 @@ def caught(request):
     print(profile.poffins)
     print(profile.pikachu)
     # decrement poffins by 5
-    # profile.poffins -= 5
+    profile.poffins -= 5
     new_pika = Pika.objects.order_by("?").first()
     profile.pikachu.add(new_pika.id)
     profile.save()
