@@ -65,12 +65,13 @@ def pikabase_index(request):
     newTime = datetime.now(timezone.utc)
     difference = newTime - lastTime
     
-    if (difference.seconds >= 1):
+    if (difference.seconds >= 60):
         print(difference.days)
         # Increment poffins by 10
         profile.poffins += 10
         # change loginTime to now in Profile
         profile.loginTime = newTime
+        profile.save()
         # send dailyReward
         dailyReward = 1
     else:
@@ -85,10 +86,6 @@ def pikabase_index(request):
 
 @login_required
 def profile(request):
-    # profile = Profile(name=request.user, poffins=30)
-    # print(profile)
-    # profile.save()
-    # print("profile saved~~~~~~~")
     return render(request, 'accounts/profile.html')
 
 @login_required
