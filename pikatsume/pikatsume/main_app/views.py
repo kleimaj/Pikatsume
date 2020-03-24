@@ -41,7 +41,7 @@ def pikabase_index(request):
     newTime = datetime.now(timezone.utc)
     difference = newTime - lastTime
     
-    if (difference.seconds >= 1):
+    if (difference.seconds >= 60):
         print(difference.days)
         # Increment poffins by 10
         profile.poffins += 10
@@ -56,7 +56,7 @@ def pikabase_index(request):
     # print("seconds: ",difference.seconds)
     
     pikas = Pika.objects.all()
-    return  render(request, 'pikabase/index.html', { 'pikas': pikas })
+    return  render(request, 'pikabase/index.html', { 'pikas': pikas, 'dailyReward': dailyReward })
 
 @login_required
 def profile(request):
