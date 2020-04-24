@@ -34,27 +34,28 @@ def about(request):
     return  render(request, 'about.html')
 
 def pikabase_index(request):
-    user = request.user
-    profile = Profile.objects.get(user=user)
+    # user = request.user
+    # profile = Profile.objects.get(user=user)
+    # print("~~~~~~~")
+    # print(profile)
+    # lastTime = profile.loginTime
+    # newTime = datetime.now(timezone.utc)
+    # difference = newTime - lastTime
     
-    lastTime = profile.loginTime
-    newTime = datetime.now(timezone.utc)
-    difference = newTime - lastTime
-    
-    if (difference.seconds >= 60):
-        print(difference.days)
-        # Increment poffins by 10
-        profile.poffins += 10
-        # change loginTime to now in Profile
-        profile.loginTime = newTime
-        profile.save()
-        # send dailyReward
-        dailyReward = 1
-    else:
-        dailyReward = 0
-        # print("not greater than a day")
-    # print("seconds: ",difference.seconds)
-    
+    # if (difference.seconds >= 60):
+    #     print(difference.days)
+    #     # Increment poffins by 10
+    #     profile.poffins += 10
+    #     # change loginTime to now in Profile
+    #     profile.loginTime = newTime
+    #     profile.save()
+    #     # send dailyReward
+    #     dailyReward = 1
+    # else:
+    #     dailyReward = 0
+    #     # print("not greater than a day")
+    # # print("seconds: ",difference.seconds)
+    dailyReward = 0
     pikas = Pika.objects.all()
     return  render(request, 'pikabase/index.html', { 'pikas': pikas, 'dailyReward': dailyReward })
 
